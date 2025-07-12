@@ -15,8 +15,8 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL("https://wilsonkumalo.vercel.app"), // Replace with your actual domain
   title: {
-    default: "Wilson Kumalo - Full Stack Developer & UI/UX Designer",
-    template: "%s | Wilson Kumalo - Full Stack Developer",
+    default: "Wilson Kumalo - Full Stack Web & Mobile App Developer",
+    template: "%s | Wilson Kumalo - Full Stack Web & Mobile App Developer",
   },
   description:
     "Wilson Kumalo is a passionate full-stack developer with 5+ years of experience creating exceptional digital experiences. Specializing in React, Next.js, Node.js, and modern web technologies.",
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://wilsonkumalo.vercel.app",
     siteName: "Wilson Kumalo - Full Stack Developer",
-    title: "Wilson Kumalo - Full Stack Developer & UI/UX Designer",
+    title: "Wilson Kumalo - Full Stack Web & Mobile App Developer",
     description:
       "Passionate full-stack developer with 5+ years of experience creating exceptional digital experiences. Specializing in React, Next.js, Node.js, and modern web technologies.",
     images: [
@@ -62,7 +62,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Wilson Kumalo - Full Stack Developer & UI/UX Designer",
+    title: "Wilson Kumalo - Full Stack Web & Mobile App Developer",
     description: "Passionate full-stack developer creating exceptional digital experiences with modern technologies.",
     creator: "@wilsonkumalo", // Replace with actual Twitter handle
     images: ["/images/twitter-image.jpg"],
@@ -79,7 +79,7 @@ export const metadata: Metadata = {
     },
   },
   verification: {
-    google: "your-google-verification-code", // Replace with actual verification code
+    google: "JaDQXUSonG-R0nxX3nY86RPUE99iXNz9D6u_C8xTw7U",
     // yandex: 'your-yandex-verification-code',
     // yahoo: 'your-yahoo-verification-code',
   },
