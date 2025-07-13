@@ -8,10 +8,7 @@ const containerVariants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
-    transition: {
-      staggerChildren: 0.2,
-      delayChildren: 0.1
-    }
+    
   }
 };
 
@@ -23,28 +20,21 @@ const itemVariants = {
   visible: {
     opacity: 1,
     y: 0,
-    transition: {
-      duration: 0.6,
-      ease: "easeOut"
-    }
+   
   }
 };
 
 const timelineItemVariants = {
-  hidden: (index) => ({
+  hidden: (index: number) => ({
     opacity: 0,
     x: index % 2 === 0 ? -50 : 50,
     y: 20
   }),
-  visible: (index) => ({
+  visible: (index: number) => ({
     opacity: 1,
     x: 0,
     y: 0,
-    transition: {
-      duration: 0.6,
-      delay: index * 0.1,
-      ease: "easeOut"
-    }
+    
   })
 };
 
