@@ -15,47 +15,68 @@ export function TestimonialsSection() {
   const [currentTestimonial, setCurrentTestimonial] = useState(0)
 
   const testimonials = [
-    {
-      name: "Sarah Johnson",
-      role: "CEO",
-      company: "TechCorp Inc.",
-      image: "/placeholder.svg?height=80&width=80",
-      rating: 5,
-      text: "John delivered an exceptional e-commerce platform that exceeded our expectations. His attention to detail and technical expertise helped us increase our online sales by 300%. The project was completed on time and within budget.",
-      project: "E-Commerce Platform",
-      results: "300% increase in sales",
-    },
-    {
-      name: "Michael Chen",
-      role: "CTO",
-      company: "StartupHub",
-      image: "/placeholder.svg?height=80&width=80",
-      rating: 5,
-      text: "Working with John was a game-changer for our startup. He built a scalable task management platform that now serves over 2,000 users daily. His code quality and architectural decisions were spot-on.",
-      project: "Task Management SaaS",
-      results: "2K+ daily active users",
-    },
-    {
-      name: "Emily Rodriguez",
-      role: "Product Manager",
-      company: "DataCorp",
-      image: "/placeholder.svg?height=80&width=80",
-      rating: 5,
-      text: "John's expertise in AI and data visualization helped us create an analytics dashboard that processes over 1M data points daily. His ability to translate complex requirements into elegant solutions is remarkable.",
-      project: "AI Analytics Dashboard",
-      results: "1M+ data points processed",
-    },
-    {
-      name: "David Thompson",
-      role: "Founder",
-      company: "FinanceBank",
-      image: "/placeholder.svg?height=80&width=80",
-      rating: 5,
-      text: "Security and performance were critical for our banking app. John delivered a solution that handles 100K+ users with 99.99% uptime. His understanding of financial regulations and security best practices was invaluable.",
-      project: "Mobile Banking App",
-      results: "99.99% uptime achieved",
-    },
-  ]
+  {
+    name: "T. Magaya",
+    role: "CEO",
+    company: "Sundawn Solutions",
+    image: "/images/testimonials/sundawn.jpeg",
+    rating: 5,
+    text: "Wilson helped us launch a powerful email marketing platform tailored to our unique customer segments. His expertise brought clarity to our digital strategy and drove measurable growth.",
+    project: "Email Marketing Platform and Consulting",
+    results: "Significant increase in sales and enhanced digital presence",
+  },
+  {
+    name: "M. Magodo",
+    role: "Director",
+    company: "Kingsman Software Services",
+    image: "/images/testimonials/kingsman.png",
+    rating: 5,
+    text: "Working with Wilson was a game-changer for our startup.  His code quality and architectural decisions were spot-on.",
+    project: "Company CTO",
+    results: "Successful MVP launch and rapid platform growth",
+  },
+  {
+    name: "K. Jukwa",
+    role: "Co-Founder & CEO",
+    company: "Juvakel Team Recruiters",
+    image: "/images/testimonials/juvakel.png",
+    rating: 5,
+    text: "Wilson provided valuable technical insight and helped us refine our recruitment platform's architecture. His guidance was key to securing early clients.",
+    project: "Consulting",
+    results: "Improved platform stability and market readiness",
+  },
+  {
+    name: "B. Nyaude",
+    role: "Aspiring Software Engineer",
+    company: "",
+    image: "/images/testimonials/blissah.jpg ",
+    rating: 5,
+    text: "Wilson has been instrumental in helping me transform raw tech ideas into practical startup concepts. His mentorship has been both insightful and motivating, providing me with clear direction and confidence.",
+    project: "Mentorship and Consulting",
+    results: "Defined product vision and strategic development roadmap",
+  },
+  {
+    name: "C. Mabvura",
+    role: "Software Developer",
+    company: "",
+    image: "/placeholder.svg?height=80&width=80",
+    rating: 5,
+    text: "Wilson's mentorship helped me transition from learning to building. His feedback and structured guidance boosted my confidence and skills drastically.",
+    project: "Mentorship and Consulting",
+    results: "Landed freelance projects and built strong portfolio",
+  },
+  {
+    name: "O.V. Zengeni",
+    role: "Aspiring Software Engineer",
+    company: "",
+    image: "/placeholder.svg?height=80&width=80",
+    rating: 5,
+    text: "Wilson played a vital role in my growth as a developer. From pair programming to resume reviews, his advice has had a lasting impact on my journey.",
+    project: "Mentorship and Consulting",
+    results: "Improved coding skills and professional readiness",
+  },
+]
+
 
   const nextTestimonial = () => {
     setCurrentTestimonial((prev) => (prev + 1) % testimonials.length)
@@ -209,6 +230,8 @@ export function TestimonialsSection() {
                   className={`w-3 h-3 rounded-full transition-colors ${
                     index === currentTestimonial ? "bg-[#1A5319]" : "bg-[#80AF81]"
                   }`}
+                  title={`Go to testimonial ${index + 1}`}
+                  aria-label={`Go to testimonial ${index + 1}`}
                 />
               ))}
             </div>
@@ -223,7 +246,7 @@ export function TestimonialsSection() {
             </Button>
           </motion.div>
 
-          {/* Client Logos */}
+          {/* Client Logos
           <motion.div
             initial={{ y: 50, opacity: 0 }}
             animate={isInView ? { y: 0, opacity: 1 } : { y: 50, opacity: 0 }}
@@ -244,7 +267,7 @@ export function TestimonialsSection() {
                 </motion.div>
               ))}
             </div>
-          </motion.div>
+          </motion.div> */}
         </motion.div>
       </div>
     </section>
