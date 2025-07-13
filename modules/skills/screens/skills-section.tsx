@@ -10,112 +10,91 @@ import { Code, Database, Cloud, Wrench, Server, Shield, Zap } from "lucide-react
 import Link from "next/link"
 import Image from "next/image"
 import { useInView } from "react-intersection-observer"
+import { LearningJourney } from '../components/learning-outcome';
 
 export function SkillsSection() {
-  const skillCategories = [
-    {
-      id: "frontend",
-      name: "Frontend",
-      icon: Code,
-      color: "bg-blue-500",
-      skills: [
-        { name: "React", level: 95, icon: "/placeholder.svg?height=40&width=40", experience: "4 years" },
-        { name: "TypeScript", level: 90, icon: "/placeholder.svg?height=40&width=40", experience: "3 years" },
-        { name: "Next.js", level: 88, icon: "/placeholder.svg?height=40&width=40", experience: "2 years" },
-        { name: "Vue.js", level: 85, icon: "/placeholder.svg?height=40&width=40", experience: "2 years" },
-        { name: "Tailwind CSS", level: 92, icon: "/placeholder.svg?height=40&width=40", experience: "3 years" },
-        { name: "SASS/SCSS", level: 88, icon: "/placeholder.svg?height=40&width=40", experience: "4 years" },
-      ],
-    },
-    {
-      id: "backend",
-      name: "Backend",
-      icon: Server,
-      color: "bg-green-500",
-      skills: [
-        { name: "Node.js", level: 85, icon: "/placeholder.svg?height=40&width=40", experience: "4 years" },
-        { name: "Python", level: 80, icon: "/placeholder.svg?height=40&width=40", experience: "3 years" },
-        { name: "Express.js", level: 83, icon: "/placeholder.svg?height=40&width=40", experience: "3 years" },
-        { name: "FastAPI", level: 78, icon: "/placeholder.svg?height=40&width=40", experience: "2 years" },
-        { name: "GraphQL", level: 75, icon: "/placeholder.svg?height=40&width=40", experience: "2 years" },
-        { name: "REST APIs", level: 90, icon: "/placeholder.svg?height=40&width=40", experience: "4 years" },
-      ],
-    },
-    {
-      id: "database",
-      name: "Database",
-      icon: Database,
-      color: "bg-purple-500",
-      skills: [
-        { name: "PostgreSQL", level: 82, icon: "/placeholder.svg?height=40&width=40", experience: "3 years" },
-        { name: "MongoDB", level: 78, icon: "/placeholder.svg?height=40&width=40", experience: "3 years" },
-        { name: "Redis", level: 75, icon: "/placeholder.svg?height=40&width=40", experience: "2 years" },
-        { name: "MySQL", level: 80, icon: "/placeholder.svg?height=40&width=40", experience: "4 years" },
-        { name: "Supabase", level: 85, icon: "/placeholder.svg?height=40&width=40", experience: "1 year" },
-        { name: "Firebase", level: 82, icon: "/placeholder.svg?height=40&width=40", experience: "2 years" },
-      ],
-    },
-    {
-      id: "cloud",
-      name: "Cloud & DevOps",
-      icon: Cloud,
-      color: "bg-orange-500",
-      skills: [
-        { name: "AWS", level: 75, icon: "/placeholder.svg?height=40&width=40", experience: "2 years" },
-        { name: "Docker", level: 78, icon: "/placeholder.svg?height=40&width=40", experience: "2 years" },
-        { name: "Vercel", level: 90, icon: "/placeholder.svg?height=40&width=40", experience: "3 years" },
-        { name: "Netlify", level: 85, icon: "/placeholder.svg?height=40&width=40", experience: "3 years" },
-        { name: "GitHub Actions", level: 80, icon: "/placeholder.svg?height=40&width=40", experience: "2 years" },
-        { name: "Kubernetes", level: 65, icon: "/placeholder.svg?height=40&width=40", experience: "1 year" },
-      ],
-    },
-    {
-      id: "tools",
-      name: "Tools & Others",
-      icon: Wrench,
-      color: "bg-red-500",
-      skills: [
-        { name: "Git", level: 90, icon: "/placeholder.svg?height=40&width=40", experience: "5 years" },
-        { name: "VS Code", level: 95, icon: "/placeholder.svg?height=40&width=40", experience: "5 years" },
-        { name: "Figma", level: 80, icon: "/placeholder.svg?height=40&width=40", experience: "3 years" },
-        { name: "Postman", level: 85, icon: "/placeholder.svg?height=40&width=40", experience: "4 years" },
-        { name: "Jest", level: 78, icon: "/placeholder.svg?height=40&width=40", experience: "2 years" },
-        { name: "Webpack", level: 75, icon: "/placeholder.svg?height=40&width=40", experience: "3 years" },
-      ],
-    },
-  ]
+  
 
-  const certifications = [
-    {
-      name: "AWS Certified Solutions Architect",
-      issuer: "Amazon Web Services",
-      date: "2023",
-      image: "/placeholder.svg?height=80&width=80",
-      credentialId: "AWS-SAA-2023-001",
-    },
-    {
-      name: "Google Cloud Professional Developer",
-      issuer: "Google Cloud",
-      date: "2022",
-      image: "/placeholder.svg?height=80&width=80",
-      credentialId: "GCP-PD-2022-001",
-    },
-    {
-      name: "Meta Frontend Developer Certificate",
-      issuer: "Meta",
-      date: "2021",
-      image: "/placeholder.svg?height=80&width=80",
-      credentialId: "META-FE-2021-001",
-    },
-  ]
+ const skillCategories = [
+  {
+    id: "frontend",
+    name: "Frontend",
+    icon: Code,
+    color: "bg-blue-500",
+    skills: [
+      { name: "Flutter", level: 95, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg", experience: "3 years" },
+      { name: "React", level: 92, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg", experience: "2.5 years" },
+      { name: "Next.js", level: 90, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg", experience: "2 years" },
+      { name: "TypeScript", level: 90, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg", experience: "2.5 years" },
+      { name: "Tailwind CSS", level: 92, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg", experience: "2.5 years" }
+    ],
+  },
+  {
+    id: "backend",
+    name: "Backend",
+    icon: Server,
+    color: "bg-green-500",
+    skills: [
+      { name: "Node.js", level: 90, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg", experience: "3 years" },
+      { name: "Express.js", level: 88, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg", experience: "3 years" },
+      { name: "Python", level: 85, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg", experience: "2 years" },
+      { name: "Flask", level: 85, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flask/flask-original.svg", experience: "1.5 years" },
+      { name: "FastAPI", level: 82, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg", experience: "1 year" },
+      { name: "Spring Boot", level: 80, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg", experience: "3 years" },
+      { name: "GraphQL", level: 80, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/graphql/graphql-plain.svg", experience: "1 year" },
+      { name: "REST APIs", level: 92, icon: "https://img.icons8.com/external-outline-juicy-fish/40/000000/external-api-coding-and-development-outline-outline-juicy-fish.png", experience: "3 years" },
+    ],
+  },
+  {
+    id: "database",
+    name: "Database",
+    icon: Database,
+    color: "bg-purple-500",
+    skills: [
+      { name: "PostgreSQL", level: 85, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg", experience: "3 years" },
+      { name: "MongoDB", level: 80, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg", experience: "2 years" },
+      { name: "MySQL", level: 80, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg", experience: "3 years" },
+      { name: "Firebase", level: 88, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg", experience: "3 years" },
+      { name: "Supabase", level: 82, icon: "https://seeklogo.com/images/S/supabase-logo-DCC676FFE2-seeklogo.com.png", experience: "2 years" },
+      { name: "Redis", level: 75, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg", experience: "3 years" },
+    ],
+  },
+  {
+    id: "cloud",
+    name: "Cloud & DevOps",
+    icon: Cloud,
+    color: "bg-orange-500",
+    skills: [
+      { name: "Firebase Hosting", level: 90, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg", experience: "3 years" },
+      { name: "Supabase Edge Functions", level: 82, icon: "https://seeklogo.com/images/S/supabase-logo-DCC676FFE2-seeklogo.com.png", experience: "2 years" },
+      { name: "Docker", level: 80, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg", experience: "2 years" },
+      { name: "AWS", level: 78, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg", experience: "2 years" },
+      { name: "Vercel", level: 90, icon: "https://assets.vercel.com/image/upload/v1662130559/front/favicon/vercel/favicon.ico", experience: "2.5 years" },
+      { name: "GitHub Actions", level: 80, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg", experience: "2 years" },
+    ],
+  },
+  {
+    id: "tools",
+    name: "Tools & Others",
+    icon: Wrench,
+    color: "bg-red-500",
+    skills: [
+      { name: "Git", level: 92, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg", experience: "3 years" },
+      { name: "VS Code", level: 95, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg", experience: "3 years" },
+      { name: "Postman", level: 90, icon: "https://cdn.iconscout.com/icon/free/png-256/free-postman-3521648-2945092.png", experience: "3 years" },
+      { name: "Figma", level: 85, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg", experience: "3 years" }
+    ],
+  },
+];
+
+
+
 
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-      },
+     
     },
   }
 
@@ -124,9 +103,7 @@ export function SkillsSection() {
     visible: {
       y: 0,
       opacity: 1,
-      transition: {
-        duration: 0.6,
-      },
+     
     },
   }
 
@@ -220,7 +197,7 @@ export function SkillsSection() {
             </Tabs>
           </motion.div>
 
-          {/* Certifications */}
+          {/* Certifications
           <motion.div variants={itemVariants} className="mb-20">
             <h2 className="text-3xl font-bold text-[#1A5319] text-center mb-12">Certifications & Achievements</h2>
             <div className="grid md:grid-cols-3 gap-8">
@@ -246,111 +223,10 @@ export function SkillsSection() {
                 </motion.div>
               ))}
             </div>
-          </motion.div>
+          </motion.div> */}
 
-          {/* Learning Journey */}
-          <motion.div variants={itemVariants} className="mb-20">
-            <h2 className="text-3xl font-bold text-[#1A5319] text-center mb-12">Continuous Learning</h2>
-            <Card className="bg-white/80 backdrop-blur-sm border-[#80AF81] shadow-xl">
-              <CardContent className="p-8">
-                <div className="grid md:grid-cols-2 gap-8">
-                  <div>
-                    <h3 className="text-xl font-bold text-[#1A5319] mb-4 flex items-center">
-                      <Zap className="mr-2" />
-                      Currently Learning
-                    </h3>
-                    <div className="space-y-3">
-                      {[
-                        "Machine Learning with Python",
-                        "Advanced React Patterns",
-                        "Microservices Architecture",
-                        "Web3 Development",
-                      ].map((item, index) => (
-                        <div key={index} className="flex items-center space-x-3">
-                          <div className="w-2 h-2 bg-[#80AF81] rounded-full" />
-                          <span className="text-[#508D4E]">{item}</span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold text-[#1A5319] mb-4 flex items-center">
-                      <Shield className="mr-2" />
-                      Next Goals
-                    </h3>
-                    <div className="space-y-3">
-                      {[
-                        "Kubernetes Administrator Certification",
-                        "Advanced AWS Certifications",
-                        "Mobile App Development",
-                        "AI/ML Specialization",
-                      ].map((item, index) => (
-                        <div key={index} className="flex items-center space-x-3">
-                          <div className="w-2 h-2 bg-[#508D4E] rounded-full" />
-                          <span className="text-[#508D4E]">{item}</span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-          </motion.div>
-
-          {/* Learning Path Timeline */}
-          <motion.div variants={itemVariants} className="mb-20" ref={ref}>
-            <h2 className="text-3xl font-bold text-[#1A5319] text-center mb-12">My Learning Journey</h2>
-            <div className="relative max-w-4xl mx-auto">
-              <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-[#80AF81]" />
-              {[
-                { year: "2019", title: "Started Web Development", description: "Began with HTML, CSS, and JavaScript" },
-                {
-                  year: "2020",
-                  title: "Mastered React",
-                  description: "Deep dive into React ecosystem and modern patterns",
-                },
-                {
-                  year: "2021",
-                  title: "Full-Stack Development",
-                  description: "Added Node.js, databases, and cloud services",
-                },
-                {
-                  year: "2022",
-                  title: "Advanced Architecture",
-                  description: "Microservices, DevOps, and system design",
-                },
-                {
-                  year: "2023",
-                  title: "AI & Machine Learning",
-                  description: "Exploring AI integration in web applications",
-                },
-                {
-                  year: "2024",
-                  title: "Leadership & Mentoring",
-                  description: "Leading teams and mentoring developers",
-                },
-              ].map((milestone, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
-                  animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
-                  transition={{ delay: index * 0.2 }}
-                  className={`relative flex items-center mb-8 ${index % 2 === 0 ? "justify-start" : "justify-end"}`}
-                >
-                  <div className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-[#1A5319] rounded-full border-4 border-white shadow-lg" />
-                  <div className={`w-5/12 ${index % 2 === 0 ? "pr-8" : "pl-8"}`}>
-                    <Card className="bg-white/80 backdrop-blur-sm border-[#80AF81] shadow-lg">
-                      <CardContent className="p-6">
-                        <Badge className="bg-[#1A5319] text-white mb-3">{milestone.year}</Badge>
-                        <h3 className="font-bold text-[#1A5319] mb-2">{milestone.title}</h3>
-                        <p className="text-[#508D4E] text-sm">{milestone.description}</p>
-                      </CardContent>
-                    </Card>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
+          <LearningJourney/>
+          
 
           {/* Call to Action */}
           <motion.div variants={itemVariants}>

@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     url: "https://wilsonkumalo.vercel.app/skills",
     images: [
       {
-        url: "/images/skills-og.jpg",
+        url: "/logo/icon.jpg",
         width: 1200,
         height: 630,
         alt: "Wilson Kumalo Skills and Expertise",
@@ -31,7 +31,7 @@ const skillsSchema = {
       "@type": "ListItem",
       position: 1,
       name: "Frontend Development",
-      description: "React, Next.js, TypeScript, Tailwind CSS",
+      description: "React, Flutter, Next.js, TypeScript, Tailwind CSS",
     },
     {
       "@type": "ListItem",
