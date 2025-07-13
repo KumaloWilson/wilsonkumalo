@@ -32,6 +32,11 @@ export const metadata: Metadata = {
     "Node.js",
     "Portfolio",
     "Software Engineer",
+    "Mobile App Developer",
+    "Flutter Developer",
+    "Web Applications",
+    "Mobile Applications",
+    "Web Design",
     "Frontend Developer",
     "Backend Developer",
   ],
@@ -53,7 +58,7 @@ export const metadata: Metadata = {
       "Passionate full-stack developer with 5+ years of experience creating exceptional digital experiences. Specializing in React, Next.js, Node.js, and modern web technologies.",
     images: [
       {
-        url: "/images/og-image.jpg",
+        url: "/logo/icon.jpg",
         width: 1200,
         height: 630,
         alt: "Wilson Kumalo - Full Stack Developer",
@@ -64,8 +69,8 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Wilson Kumalo - Full Stack Web & Mobile App Developer",
     description: "Passionate full-stack developer creating exceptional digital experiences with modern technologies.",
-    creator: "@wilsonkumalo", // Replace with actual Twitter handle
-    images: ["/images/twitter-image.jpg"],
+    creator: "@KumaloWilson",
+    images: ["/logo/icon.jpg"],
   },
   robots: {
     index: true,
