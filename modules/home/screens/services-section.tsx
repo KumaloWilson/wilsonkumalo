@@ -12,56 +12,57 @@ export function ServicesSection() {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: "-100px" })
 
+
   const services = [
     {
       icon: Globe,
       title: "Web Development",
-      description: "Custom web applications built with modern frameworks like React, Next.js, and Vue.js",
-      features: ["Responsive Design", "SEO Optimized", "Fast Performance", "Modern UI/UX"],
-      color: "bg-blue-500",
-      gradient: "from-blue-500 to-blue-600",
+      description: "I craft high-performance web apps using Next.js, React, Tailwind, and modern APIs. From dashboards to booking platforms, I build responsive, scalable, and intuitive UIs.",
+      features: ["Full-Stack Solutions", "Modern UI/UX", "Responsive Design", "SEO Optimized"],
+      color: "#1A5319",
+      bgColor: "#D6EFD8",
+      image: "/images/services/web-dev.jpg",
     },
     {
       icon: Smartphone,
       title: "Mobile Development",
-      description: "Native and cross-platform mobile apps for iOS and Android using React Native",
-      features: ["Cross-Platform", "Native Performance", "App Store Ready", "Push Notifications"],
-      color: "bg-green-500",
-      gradient: "from-green-500 to-green-600",
+      description: "I build beautiful cross-platform apps using Flutter with GetX architecture, Firebase integration, and powerful animations. Apps like ride-hailing and virtual assistants are my forte.",
+      features: ["Cross-Platform (iOS/Android)", "Firebase Integration", "App Store/Play Store Ready", "Rich Animations"],
+      color: "#1A5319",
+      bgColor: "#D6EFD8",
+      image: "/images/services/mobile-dev.jpg",
     },
     {
       icon: Database,
       title: "Backend Development",
-      description: "Scalable server-side solutions with Node.js, Python, and cloud databases",
-      features: ["RESTful APIs", "Database Design", "Authentication", "Real-time Features"],
-      color: "bg-purple-500",
-      gradient: "from-purple-500 to-purple-600",
-    },
-    {
-      icon: Cloud,
-      title: "Cloud & DevOps",
-      description: "Cloud deployment, CI/CD pipelines, and infrastructure management",
-      features: ["AWS/GCP Deployment", "Docker Containers", "CI/CD Pipelines", "Monitoring"],
-      color: "bg-orange-500",
-      gradient: "from-orange-500 to-orange-600",
-    },
-    {
-      icon: Palette,
-      title: "UI/UX Design",
-      description: "User-centered design solutions that combine aesthetics with functionality",
-      features: ["User Research", "Wireframing", "Prototyping", "Design Systems"],
-      color: "bg-pink-500",
-      gradient: "from-pink-500 to-pink-600",
+      description: "Robust server-side solutions using Node.js, Express, FastAPI, Flask, Laravel, Spring Boot and more. I also integrate cloud databases, APIs, and complex authentication systems.",
+      features: ["RESTful & GraphQL APIs", "Database Design", "Authentication & RBAC", "Real-time Features (Sockets)"],
+      color: "#1A5319",
+      bgColor: "#D6EFD8",
+      image: "/images/services/backend-dev.jpg",
     },
     {
       icon: Code,
-      title: "Consulting",
-      description: "Technical consulting, code reviews, and architecture planning",
-      features: ["Code Audits", "Architecture Review", "Performance Optimization", "Team Training"],
-      color: "bg-indigo-500",
-      gradient: "from-indigo-500 to-indigo-600",
+      title: "Tech Consulting & Mentoring",
+      description: "I help startups and teams make the right tech choices, audit codebases, and optimize performance. I also train junior devs and lead agile teams.",
+      features: ["Architecture Planning", "Code Reviews", "Performance Tuning", "Mentorship & Training"],
+      color: "#1A5319",
+      bgColor: "#D6EFD8",
+      image: "/images/services/consulting.jpg",
     },
   ]
+
+
+
+  const itemVariants = {
+    hidden: { y: 30, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      
+    },
+  }
+
 
   return (
     <section ref={ref} className="py-20 px-4 bg-gradient-to-br from-[#D6EFD8] to-[#80AF81] relative overflow-hidden">
@@ -100,58 +101,65 @@ export function ServicesSection() {
             to final deployment and beyond.
           </motion.p>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                   <div className="grid md:grid-cols-2 gap-8 mb-16">
             {services.map((service, index) => (
               <motion.div
                 key={index}
-                initial={{ y: 50, opacity: 0 }}
-                animate={isInView ? { y: 0, opacity: 1 } : { y: 50, opacity: 0 }}
-                transition={{ duration: 0.6, delay: 0.1 * index }}
-                whileHover={{ y: -10, scale: 1.02 }}
+                variants={itemVariants}
+                whileHover={{ y: -8 }}
                 className="group"
               >
-                <Card className="bg-white/90 backdrop-blur-sm border-white/50 shadow-xl h-full overflow-hidden">
-                  <CardContent className="p-0">
-                    {/* Header with Icon */}
-                    <div className={`bg-gradient-to-r ${service.gradient} p-6 text-white relative overflow-hidden`}>
-                      <div className="absolute top-0 right-0 w-20 h-20 bg-white/10 rounded-full -mr-10 -mt-10" />
-                      <div className="relative z-10">
-                        <service.icon size={40} className="mb-4" />
-                        <h3 className="text-xl font-bold">{service.title}</h3>
+                <div className="bg-white rounded-2xl overflow-hidden shadow-lg h-full border-2 border-transparent hover:border-[#508D4E] transition-all duration-300">
+                  {/* Image */}
+                  <div className="h-48 bg-[#D6EFD8] relative overflow-hidden">
+                    <div
+                      className="w-full h-full bg-gray-200 flex items-center justify-center"
+                      style={{
+                        backgroundImage: `url(${service.image})`,
+                        backgroundSize: 'cover',
+                        backgroundPosition: 'center'
+                      }}
+                    >
+                      <service.icon size={48} className="text-[#508D4E] opacity-50" />
+                    </div>
+                  </div>
+                  
+                  <div className="p-8">
+                    {/* Icon and Title */}
+                    <div className="flex items-start space-x-4 mb-6">
+                      <div className="w-16 h-16 bg-[#508D4E] rounded-xl flex items-center justify-center flex-shrink-0">
+                        <service.icon size={28} className="text-white" />
+                      </div>
+                      <div>
+                        <h3 className="text-2xl font-bold text-[#1A5319] mb-2">{service.title}</h3>
+                        <div className="w-12 h-1 bg-[#80AF81]"></div>
                       </div>
                     </div>
 
-                    {/* Content */}
-                    <div className="p-6">
-                      <p className="text-[#508D4E] mb-6 leading-relaxed">{service.description}</p>
+                  {/* Description */}
+                  <p className="text-[#508D4E] mb-6 leading-relaxed">
+                    {service.description}
+                  </p>
 
-                      {/* Features */}
-                      <div className="space-y-2 mb-6">
-                        {service.features.map((feature, featureIndex) => (
-                          <motion.div
-                            key={featureIndex}
-                            initial={{ x: -20, opacity: 0 }}
-                            animate={isInView ? { x: 0, opacity: 1 } : { x: -20, opacity: 0 }}
-                            transition={{ duration: 0.4, delay: 0.3 + index * 0.1 + featureIndex * 0.1 }}
-                            className="flex items-center space-x-2"
-                          >
-                            <CheckCircle size={16} className="text-[#80AF81]" />
-                            <span className="text-sm text-[#508D4E]">{feature}</span>
-                          </motion.div>
-                        ))}
-                      </div>
-
-                      {/* CTA */}
+                  {/* Features */}
+                  <div className="space-y-3 mb-6">
+                    {service.features.map((feature, featureIndex) => (
                       <motion.div
-                        whileHover={{ x: 5 }}
-                        className="flex items-center text-[#1A5319] font-medium cursor-pointer group-hover:text-[#508D4E] transition-colors"
+                        key={featureIndex}
+                        initial={{ x: -10, opacity: 0 }}
+                        animate={isInView ? { x: 0, opacity: 1 } : { x: -10, opacity: 0 }}
+                        transition={{ duration: 0.4, delay: 0.3 + index * 0.1 + featureIndex * 0.1 }}
+                        className="flex items-center space-x-3"
                       >
-                        <span className="mr-2">Learn More</span>
-                        <ArrowRight size={16} />
+                        <CheckCircle size={18} className="text-[#80AF81] flex-shrink-0" />
+                        <span className="text-[#508D4E] font-medium">{feature}</span>
                       </motion.div>
-                    </div>
-                  </CardContent>
-                </Card>
+                    ))}
+                  </div>
+
+                  
+                  </div>
+                </div>
               </motion.div>
             ))}
           </div>
@@ -189,3 +197,5 @@ export function ServicesSection() {
     </section>
   )
 }
+
+
