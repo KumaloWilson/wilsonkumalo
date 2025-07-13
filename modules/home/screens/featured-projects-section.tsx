@@ -14,34 +14,54 @@ export function FeaturedProjectsSection() {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: "-100px" })
 
+  
   const featuredProjects = [
+
     {
-      title: "E-Commerce Platform",
+      title: "MediGuideAI - Telemedicine Platform",
       description:
-        "A comprehensive e-commerce solution with advanced features including real-time inventory management and AI-powered recommendations.",
-      image: "/placeholder.svg?height=300&width=500",
-      technologies: ["Next.js", "TypeScript", "Stripe", "PostgreSQL"],
-      stats: { users: "5K+", performance: "98%" },
+        "A smart telemedicine system offering patient triage, appointment booking, video consultations, X-Ray scanning and AI-based symptom checking. Designed to improve healthcare accessibility.",
+      image: "/images/projects/mediguide.jpg",
+      technologies: ["Next.js", "Flutter", "Dart", "ZEGO cloud", "Tensorflow", "Node.js", "FastAPI", "RAG", "Biomistral", "Pubmed-bert",  "firebase"],
+      stats: { metric1: "Prototype", metric2: "95%" },
       featured: true,
+      sourceCode: "https://github.com/KumaloWilson/MediGuide_Flutter.git"
     },
+
     {
-      title: "Task Management SaaS",
+    
+      title: "CUTcoin - Digital Campus Currency",
       description:
-        "Enterprise-grade project management platform with real-time collaboration and advanced reporting features.",
-      image: "/placeholder.svg?height=300&width=500",
-      technologies: ["React", "Node.js", "Socket.io", "MongoDB"],
-      stats: { users: "2K+", performance: "95%" },
+        "CUTcoin is a comprehensive digital campus currency system designed for Chinhoyi University of Technology. The platform enables students to make cashless transactions across campus, merchants to accept digital payments, and administrators to oversee the entire ecosystem.",
+      image: "/images/projects/cutcoin.jpg",
+      technologies: ["Next.js", "TypeScript", "Paynow", "Express", "Dart", "Flutter", "Twilio", "PostgreSQL"],
+      stats: { metric1: "University-wide", metric2: "98%" },
       featured: true,
+      sourceCode: "https://github.com/KumaloWilson/cutco.git"
     },
     {
-      title: "AI Analytics Dashboard",
-      description: "Advanced analytics platform with machine learning insights and predictive modeling capabilities.",
-      image: "/placeholder.svg?height=300&width=500",
-      technologies: ["React", "Python", "FastAPI", "TensorFlow"],
-      stats: { users: "500+", performance: "97%" },
+      title: "CUT Analytics - Real-time User Tracking",
+      description:
+        "This is a real-time web analytics system tailored for tracking user interactions on a CUT university student portal. The system consists of three core components: Browser Extension – Captures user activity and sends data securely. Frontend (React) – Displays real-time and historical analytics. Backend (Express + PostgreSQL/Supabase)",
+      image: "/images/projects/cutanalytics.jpg",
+      technologies: ["Next.js", "TypeScript", "Webpack", "Express",  "Socket.io", "PostgreSQL"],
+      stats: { metric1: "University-wide", metric2: "96%" },
       featured: true,
+      sourceCode: "https://github.com/KumaloWilson/cut_portal_web_analytics.git"
     },
+    {
+      title: "Lucid Eye - Blind Assistant App",
+      description:
+        "An AI-powered assistive mobile application for the visually impaired, offering real-time object recognition, voice feedback, and navigation assistance using Flutter and TensorFlow Lite.",
+      image: "/images/projects/lucid-eye.jpg",
+      technologies: ["Flutter", "TensorFlow Lite", "Python", "Firebase", "GetX"],
+      stats: { metric1: "Prototype", metric2: "97%" },
+      featured: true,
+      sourceCode: "https://github.com/KumaloWilson/lucideye.git"
+    },
+    
   ]
+
 
   return (
     <section ref={ref} className="py-20 px-4 bg-white relative overflow-hidden">
@@ -159,11 +179,11 @@ export function FeaturedProjectsSection() {
                       <CardContent className="p-4">
                         <div className="flex items-center space-x-4">
                           <div className="text-center">
-                            <div className="font-bold text-[#1A5319]">{project.stats.users}</div>
+                            <div className="font-bold text-[#1A5319]">{project.stats.metric1}</div>
                             <div className="text-xs text-[#508D4E]">Users</div>
                           </div>
                           <div className="text-center">
-                            <div className="font-bold text-[#1A5319]">{project.stats.performance}</div>
+                            <div className="font-bold text-[#1A5319]">{project.stats.metric2}</div>
                             <div className="text-xs text-[#508D4E]">Performance</div>
                           </div>
                         </div>
@@ -206,19 +226,24 @@ export function FeaturedProjectsSection() {
                   {/* Action Buttons */}
                   <div className="flex space-x-4">
                     <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                      <Button className="bg-[#1A5319] hover:bg-[#508D4E] text-white">
-                        <ExternalLink size={16} className="mr-2" />
-                        View Project
-                      </Button>
+                      
+                      <Link href={project.sourceCode} target="_blank">
+                        <Button className="bg-[#1A5319] hover:bg-[#508D4E] text-white">
+                          <ExternalLink size={16} className="mr-2" />
+                          View Project
+                        </Button>
+                      </Link>
                     </motion.div>
                     <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                      <Button
-                        variant="outline"
-                        className="border-[#1A5319] text-[#1A5319] hover:bg-[#1A5319] hover:text-white bg-transparent"
-                      >
-                        <Github size={16} className="mr-2" />
+                      <Link href={project.sourceCode} target="_blank">
+                        <Button
+                          variant="outline"
+                          className="border-[#1A5319] text-[#1A5319] hover:bg-[#1A5319] hover:text-white bg-transparent"
+                        >
+                          <Github size={16} className="mr-2" />
                         Source Code
                       </Button>
+                      </Link>
                     </motion.div>
                   </div>
                 </motion.div>
