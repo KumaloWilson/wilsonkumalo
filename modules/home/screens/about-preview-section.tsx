@@ -16,12 +16,58 @@ export function AboutPreviewSection() {
 
   const stats = [
     { icon: Code, label: "Projects Completed", value: "50+", color: "text-blue-600" },
-    { icon: Users, label: "Happy Clients", value: "30+", color: "text-green-600" },
-    { icon: Award, label: "Years Experience", value: "5+", color: "text-purple-600" },
-    { icon: Coffee, label: "Cups of Coffee", value: "2,847", color: "text-amber-600" },
+    { icon: Users, label: "Happy Clients", value: "20+", color: "text-green-600" },
+    { icon: Award, label: "Years Experience", value: "3+", color: "text-purple-600" },
+    { icon: Coffee, label: "Cups of Coffee", value: "12", color: "text-amber-600" },
   ]
 
-  const skills = ["React & Next.js", "TypeScript", "Node.js", "Python", "AWS", "PostgreSQL", "UI/UX Design", "DevOps"]
+    const skills = [
+    "Flutter",
+    "GetX",
+    "Firebase",
+    "Supabase",
+    "Google Maps API",
+    "Node.js",
+    "Express.js",
+    "Sequelize",
+    "PostgreSQL",
+    "MongoDB",
+    "TypeScript",
+    "JavaScript",
+    "Python",
+    "FastAPI",
+    "Flask",
+    "TensorFlow",
+    "scikit-learn",
+    "PyTorch",
+    "Java",
+    "Spring Boot",
+    "React",
+    "Next.js",
+    "Tailwind CSS",
+    "UI/UX Design",
+    "Docker",
+    "DevOps",
+    "AWS",
+    "Azure",
+    "GraphQL",
+    "WooCommerce",
+    "Mapbox",
+    "Linux (Kali, Ubuntu)",
+    "MySQL",
+    "REST APIs",
+    "Clean Architecture",
+    "MVC Architecture",
+    "Git & GitHub",
+    "Agile & Scrum",
+    "Responsive Web Design",
+    "CI/CD Pipelines",
+    "LLMs (Local & Cloud)",
+    "Chatbot Development",
+    "AI Integration",
+    "Geospatial Data Handling"
+  ]
+
 
   return (
     <section ref={ref} className="py-20 px-4 bg-white relative overflow-hidden">
@@ -79,7 +125,7 @@ export function AboutPreviewSection() {
                   className="relative overflow-hidden rounded-2xl shadow-2xl"
                 >
                   <Image
-                    src="/placeholder.svg?height=500&width=400"
+                    src="/images/home/about.jpg"
                     alt="John Doe working"
                     width={400}
                     height={500}
@@ -126,7 +172,7 @@ export function AboutPreviewSection() {
                   transition={{ duration: 0.6, delay: 0.6 }}
                   className="text-2xl font-bold text-[#1A5319] mb-4"
                 >
-                  Passionate Full Stack Developer
+                  Full Stack Web & Mobile App Developer
                 </motion.h3>
                 <motion.p
                   initial={{ y: 20, opacity: 0 }}
@@ -134,7 +180,7 @@ export function AboutPreviewSection() {
                   transition={{ duration: 0.6, delay: 0.7 }}
                   className="text-[#508D4E] leading-relaxed mb-6"
                 >
-                  I'm a dedicated full-stack developer with over 5 years of experience creating digital solutions that
+                  I'm a dedicated full-stack developer with over 3 years of experience creating digital solutions that
                   combine beautiful design with robust functionality. My passion lies in transforming complex problems
                   into elegant, user-friendly applications.
                 </motion.p>
