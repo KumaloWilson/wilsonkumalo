@@ -112,7 +112,7 @@ export default function HomePage() {
         <ServicesSection />
         <FeaturedProjectsSection />
         <TestimonialsSection />
-        <BlogPreviewSection />
+        {/* <BlogPreviewSection /> */}
         <CTASection />
       </div>
     </>

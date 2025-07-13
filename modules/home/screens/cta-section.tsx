@@ -119,6 +119,7 @@ export function CTASection() {
               </Link>
             </motion.div>
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+              <Link href="/contact">
               <Button
                 size="lg"
                 variant="outline"
@@ -127,6 +128,8 @@ export function CTASection() {
                 <Calendar className="mr-2" />
                 Schedule a Call
               </Button>
+              </Link>
+              
             </motion.div>
           </motion.div>
 

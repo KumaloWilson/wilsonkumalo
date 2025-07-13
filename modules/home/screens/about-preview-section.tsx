@@ -18,7 +18,7 @@ export function AboutPreviewSection() {
     { icon: Code, label: "Projects Completed", value: "50+", color: "text-blue-600" },
     { icon: Users, label: "Happy Clients", value: "20+", color: "text-green-600" },
     { icon: Award, label: "Years Experience", value: "3+", color: "text-purple-600" },
-    { icon: Coffee, label: "Cups of Coffee", value: "12", color: "text-amber-600" },
+    { icon: Coffee, label: "Cups of Coffee", value: "20+", color: "text-amber-600" },
   ]
 
     const skills = [
