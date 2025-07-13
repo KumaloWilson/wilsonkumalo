@@ -9,17 +9,17 @@ import { JsonLd } from "@/components/json-ld"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Wilson Kumalo - Full Stack Developer & UI/UX Designer",
+  title: "Wilson Kumalo - Full Stack Web & Mobile App Developer",
   description:
-    "Welcome to Wilson Kumalo's portfolio. Discover innovative web applications, mobile apps, and digital solutions crafted with modern technologies like React, Next.js, and Node.js.",
+    "Welcome to Wilson Kumalo's portfolio. Discover innovative web applications, mobile apps, and digital solutions crafted with modern technologies like Flutter, React, Next.js, and Node.js.",
   openGraph: {
-    title: "Wilson Kumalo - Full Stack Developer & UI/UX Designer",
+    title: "Wilson Kumalo - Full Stack Web & Mobile App Developer",
     description:
       "Welcome to Wilson Kumalo's portfolio. Discover innovative web applications, mobile apps, and digital solutions.",
     url: "https://wilsonkumalo.vercel.app",
     images: [
       {
-        url: "/images/home-og.jpg",
+        url: "/logo/icon.jpg",
         width: 1200,
         height: 630,
         alt: "Wilson Kumalo Portfolio Homepage",
@@ -33,17 +33,40 @@ const personSchema = {
   "@type": "Person",
   name: "Wilson Kumalo",
   jobTitle: "Full Stack Developer",
-  description: "Passionate full-stack developer with 5+ years of experience creating exceptional digital experiences",
+  description: "Passionate full-stack developer with 3+ years of experience creating exceptional digital experiences",
   url: "https://wilsonkumalo.vercel.app",
-  image: "https://wilsonkumalo.vercel.app/images/wilson-kumalo-profile.jpg",
+  image: "https://avatars.githubusercontent.com/u/121590986?v=4",
   sameAs: [
-    "https://linkedin.com/in/wilsonkumalo",
-    "https://github.com/wilsonkumalo",
-    "https://twitter.com/wilsonkumalo",
+    "https://www.linkedin.com/in/wilson-kumalo-733550243/",
+    "https://github.com/KumaloWilson",
+    "https://twitter.com/KumaloWilson",
   ],
   knowsAbout: [
     "JavaScript",
     "TypeScript",
+    "Dart",
+    "Flutter",
+    "HTML",
+    "CSS",
+    "Tailwind CSS",
+    "Bootstrap",
+    "Material UI",
+    "Sass",
+    "GraphQL",
+    "REST APIs",
+    "Firebase",
+    "MongoDB",
+    "PostgreSQL",
+    "MySQL",
+    "Express.js",
+    "NestJS",
+    "GraphQL",
+    "Mobile App Development",
+
+    "Apollo Client",
+    "Redux",
+    "MobX",
+    "Next.js",
     "React",
     "Next.js",
     "Node.js",
@@ -53,11 +76,11 @@ const personSchema = {
   ],
   alumniOf: {
     "@type": "Organization",
-    name: "Your University", // Replace with actual education
+    name: "Chinhoyi University of Technology",
   },
   worksFor: {
     "@type": "Organization",
-    name: "Freelance Developer",
+    name: "Kays Consulting Services",
   },
 }
 
