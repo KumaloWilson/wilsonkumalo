@@ -107,7 +107,6 @@ export function SkillsSection() {
     },
   }
 
-  const { ref, inView: isInView } = useInView({ threshold: 0.2 })
 
   return (
     <section className="py-20 px-4">
