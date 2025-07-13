@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     url: "https://wilsonkumalo.vercel.app/about",
     images: [
       {
-        url: "/images/about-og.jpg",
+        url: "/logo/icon.jpg",
         width: 1200,
         height: 630,
         alt: "About Wilson Kumalo",
@@ -25,13 +25,13 @@ const aboutPageSchema = {
   "@context": "https://schema.org",
   "@type": "AboutPage",
   name: "About Wilson Kumalo",
-  description: "Learn about Wilson Kumalo's journey as a full-stack developer",
+  description: "Learn about Wilson Kumalo's journey as a full-stack web and mobile developer",
   url: "https://wilsonkumalo.vercel.app/about",
   mainEntity: {
     "@type": "Person",
     name: "Wilson Kumalo",
     jobTitle: "Full Stack Developer",
-    yearsOfExperience: "5+",
+    yearsOfExperience: "3+",
     skills: ["React", "Next.js", "TypeScript", "Node.js", "Python", "PostgreSQL", "MongoDB", "AWS", "UI/UX Design"],
   },
 }

@@ -32,48 +32,48 @@ export function AboutSection() {
   }
 
   const achievements = [
-    { icon: Award, title: "Certified Full Stack Developer", year: "2023" },
-    { icon: Code, title: "AWS Solutions Architect", year: "2022" },
-    { icon: Users, title: "Team Lead Experience", year: "2021" },
-    { icon: Heart, title: "Open Source Contributor", year: "2020" },
+    { icon: Code, title: "Certified AR-VR Mobile Developer", year: "2025" },
+    { icon: Award, title: "Certified Full Stack Developer", year: "2024" },
+    { icon: Users, title: "Team Lead Experience", year: "2023" },
+    { icon: Heart, title: "Open Source Contributor", year: "2023" },
   ]
+const timeline = [
+  {
+    year: "2025",
+    title: "Full Stack Developer",
+    company: "Kays Consulting Services",
+    description:
+      "Working on cross-platform web and mobile solutions across multiple domains. Responsible for building scalable backends, modern UIs, and integrating third-party APIs. Led the development of core business platforms and introduced automation for internal workflows.",
+  },
+  {
+    year: "2024",
+    title: "Lead Software Engineer",
+    company: "Abstrak Agency",
+    description:
+      "Spearheaded full-stack development initiatives across multiple client projects. Mentored junior developers, enforced code quality standards, and introduced scalable architecture patterns using modern frameworks like Next.js and Flutter.",
+  },
+  {
+    year: "2023",
+    title: "Lead Mobile App Developer",
+    company: "KaribuTech AI",
+    description:
+      "Led the design and development of AI-powered mobile applications using Flutter. Integrated real-time databases, authentication, and push notifications while delivering intuitive user experiences. Focused on performance optimization and rapid prototyping.",
+  },
+  {
+    year: "2022",
+    title: "Software Developer",
+    company: "Kingsman Software Services",
+    description:
+      "Started my professional journey, learned modern development practices, and contributed to various projects. Worked across the stack and helped shape the company’s first client products, building strong foundations in mobile and backend technologies.",
+  },
+];
 
-  const timeline = [
-    {
-      year: "2024",
-      title: "Senior Full Stack Developer",
-      company: "Tech Innovations Inc.",
-      description:
-        "Leading development of enterprise-scale applications, mentoring junior developers, and architecting scalable solutions.",
-    },
-    {
-      year: "2022",
-      title: "Full Stack Developer",
-      company: "Digital Solutions Co.",
-      description:
-        "Developed and maintained multiple client projects, implemented CI/CD pipelines, and improved application performance by 40%.",
-    },
-    {
-      year: "2020",
-      title: "Frontend Developer",
-      company: "Creative Agency",
-      description:
-        "Created responsive web applications, collaborated with design teams, and delivered pixel-perfect implementations.",
-    },
-    {
-      year: "2019",
-      title: "Junior Developer",
-      company: "StartUp Hub",
-      description:
-        "Started my professional journey, learned modern development practices, and contributed to various projects.",
-    },
-  ]
 
   const personalStats = [
-    { icon: Coffee, label: "Cups of Coffee", value: "2,847", color: "text-amber-600" },
-    { icon: Code, label: "Lines of Code", value: "150K+", color: "text-blue-600" },
-    { icon: Users, label: "Happy Clients", value: "45+", color: "text-green-600" },
-    { icon: Calendar, label: "Years Experience", value: "5+", color: "text-purple-600" },
+    { icon: Coffee, label: "Cups of Coffee", value: "20+", color: "text-amber-600" },
+    { icon: Code, label: "Lines of Code", value: "250K+", color: "text-blue-600" },
+    { icon: Users, label: "Happy Clients", value: "20+", color: "text-green-600" },
+    { icon: Calendar, label: "Years Experience", value: "3+", color: "text-purple-600" },
   ]
 
   return (
@@ -94,7 +94,7 @@ export function AboutSection() {
                 <div className="grid md:grid-cols-2">
                   <div className="relative h-64 md:h-full">
                     <Image
-                      src="/placeholder.svg?height=400&width=600"
+                      src="https://avatars.githubusercontent.com/u/121590986?v=4"
                       alt="John Doe working"
                       fill
                       className="object-cover"
@@ -102,9 +102,9 @@ export function AboutSection() {
                     <div className="absolute inset-0 bg-gradient-to-r from-[#1A5319]/20 to-transparent" />
                   </div>
                   <div className="p-8 md:p-12">
-                    <h2 className="text-3xl font-bold text-[#1A5319] mb-6">Hello, I'm John Doe</h2>
+                    <h2 className="text-3xl font-bold text-[#1A5319] mb-6">Hello, I'm Wilson Kumalo</h2>
                     <p className="text-[#508D4E] leading-relaxed mb-6">
-                      I'm a passionate full-stack developer with over 5 years of experience creating digital solutions
+                      I'm a passionate full-stack web and mobile app developer with over 3 years of experience creating digital solutions
                       that combine beautiful design with robust functionality. My journey began with a curiosity about
                       how things work on the web, and it has evolved into a deep love for crafting exceptional user
                       experiences.
@@ -242,11 +242,17 @@ export function AboutSection() {
               <CardContent className="p-8">
                 <div className="grid md:grid-cols-2 gap-8">
                   {[
-                    { skill: "Frontend Development", level: 95 },
-                    { skill: "Backend Development", level: 88 },
-                    { skill: "Database Design", level: 85 },
-                    { skill: "DevOps & Deployment", level: 80 },
-                  ].map((item, index) => (
+  { skill: "Frontend Development (Flutter, React, Next.js)", level: 85 },
+  { skill: "Backend Development (Node.js, Express, FastAPI, Spring Boot)", level: 90 },
+  { skill: "Database Design & Management (PostgreSQL, MySQL, MongoDB, Firebase)", level: 80 },
+  { skill: "DevOps & Deployment (Docker, Supabase, Vercel, DirectAdmin)", level: 80 },
+  { skill: "Mobile App Development (Flutter, Firebase, GetX, MVC)", level: 95 },
+  { skill: "Cloud & Serverless (Firebase, AWS, Supabase, Azure)", level: 85 },
+  { skill: "API Design & Integration (REST, GraphQL, Webhooks)", level: 90 },
+  { skill: "Software Architecture & System Design", level: 87 },
+  { skill: "UI/UX & Animations (flutter_animate, TailwindCSS, Framer Motion)", level: 89 },
+  { skill: "Mentorship & Technical Leadership", level: 86 },
+].map((item, index) => (
                     <div key={index} className="space-y-3">
                       <div className="flex justify-between">
                         <span className="font-medium text-[#1A5319]">{item.skill}</span>
@@ -265,22 +271,22 @@ export function AboutSection() {
             <h2 className="text-3xl font-bold text-[#1A5319] text-center mb-12">Beyond Coding</h2>
             <div className="grid md:grid-cols-3 gap-8">
               {[
-                {
-                  title: "Photography",
-                  description: "Capturing moments and exploring creative perspectives through the lens.",
-                  image: "/placeholder.svg?height=200&width=300",
-                },
-                {
-                  title: "Open Source",
-                  description: "Contributing to the community and collaborating on meaningful projects.",
-                  image: "/placeholder.svg?height=200&width=300",
-                },
-                {
-                  title: "Mentoring",
-                  description: "Helping aspiring developers grow and achieve their career goals.",
-                  image: "/placeholder.svg?height=200&width=300",
-                },
-              ].map((interest, index) => (
+  {
+    title: "Exploring Tech Trends",
+    description: "Staying ahead by researching emerging technologies, frameworks, and innovations shaping the future.",
+    image: "/images/about/trends.jpg",
+  },
+  {
+    title: "Open Source",
+    description: "Contributing to the community and collaborating on meaningful projects.",
+    image: "/images/about/opensource.jpg",
+  },
+  {
+    title: "Mentoring",
+    description: "Helping aspiring developers grow and achieve their career goals.",
+    image: "/images/about/mentor.jpg",
+  },
+].map((interest, index) => (
                 <motion.div key={index} whileHover={{ y: -10 }} className="group">
                   <Card className="bg-white/80 backdrop-blur-sm border-[#80AF81] shadow-lg overflow-hidden">
                     <div className="relative h-48">
