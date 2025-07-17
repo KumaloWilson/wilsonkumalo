@@ -25,30 +25,13 @@ const portfolioSchema = {
   "@context": "https://schema.org",
   "@type": "CreativeWork",
   name: "Wilson Kumalo's Portfolio",
-  description: "A collection of web development projects and digital solutions",
+  description: "A collection of web and mobile app development projects and digital solutions",
   url: "https://wilsonkumalo.vercel.app/portfolio",
   author: {
     "@type": "Person",
     name: "Wilson Kumalo",
   },
-  workExample: [
-    {
-      "@type": "SoftwareApplication",
-      name: "E-Commerce Platform",
-      description: "Full-stack e-commerce solution with advanced features",
-      applicationCategory: "WebApplication",
-      operatingSystem: "Web Browser",
-      programmingLanguage: ["JavaScript", "TypeScript", "React", "Next.js"],
-    },
-    {
-      "@type": "SoftwareApplication",
-      name: "Task Management SaaS",
-      description: "Collaborative project management tool with real-time updates",
-      applicationCategory: "WebApplication",
-      operatingSystem: "Web Browser",
-      programmingLanguage: ["React", "Node.js", "MongoDB"],
-    },
-  ],
+ 
 }
 
 export default function PortfolioPage() {
