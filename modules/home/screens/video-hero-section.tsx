@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion"
 import { useState, useEffect, useRef } from "react"
-import { ArrowDown, Github, Linkedin, Mail, Play, Pause, ChevronLeft, ChevronRight } from "lucide-react"
+import { ArrowDown, Github, Linkedin, Mail, Play, Pause, ChevronLeft, ChevronRight, AlertCircle } from "lucide-react"
 import Link from "next/link"
 
 interface VideoSlide {
@@ -18,6 +18,8 @@ export function VideoHeroSection() {
   const [currentSlide, setCurrentSlide] = useState(0)
   const [isPlaying, setIsPlaying] = useState(true)
   const [videosLoaded, setVideosLoaded] = useState<boolean[]>([])
+  const [videoErrors, setVideoErrors] = useState<string[]>([])
+  const [debugMode, setDebugMode] = useState(false)
   const videoRefs = useRef<(HTMLVideoElement | null)[]>([])
 
   const videoSlides: VideoSlide[] = [
@@ -37,33 +39,56 @@ export function VideoHeroSection() {
       posterUrl: "/images/home/hero.jpg",
       category: "Mobile Development",
     },
-    
   ]
 
-  // Preload all videos
+  // Enhanced video preloading with better error handling
   useEffect(() => {
     const loadPromises = videoSlides.map((slide, index) => {
       return new Promise<boolean>((resolve) => {
         const video = document.createElement("video")
-        video.src = slide.videoUrl
+        
+        // Add multiple source formats for better compatibility
+        video.innerHTML = `
+          <source src="${slide.videoUrl}" type="video/quicktime">
+          <source src="${slide.videoUrl.replace('.mov', '.mp4')}" type="video/mp4">
+          <source src="${slide.videoUrl.replace('.mov', '.webm')}" type="video/webm">
+        `
+        
         video.preload = "metadata"
         video.muted = true
         video.loop = true
+        video.playsInline = true
+        
+        // Add crossorigin for CORS issues
+        video.crossOrigin = "anonymous"
 
         video.addEventListener("loadeddata", () => {
+          console.log(`Video ${index + 1} loaded successfully`)
           resolve(true)
         })
 
-        video.addEventListener("error", () => {
+        video.addEventListener("error", (e) => {
+          const errorMsg = `Video ${index + 1} failed to load: ${e.message || 'Unknown error'}`
+          console.error(errorMsg)
+          setVideoErrors(prev => [...prev, errorMsg])
           resolve(false)
         })
 
-        setTimeout(() => resolve(false), 5000)
+        video.addEventListener("loadstart", () => {
+          console.log(`Video ${index + 1} started loading`)
+        })
+
+        // Timeout after 10 seconds instead of 5
+        setTimeout(() => {
+          console.warn(`Video ${index + 1} loading timeout`)
+          resolve(false)
+        }, 10000)
       })
     })
 
     Promise.all(loadPromises).then((results) => {
       setVideosLoaded(results)
+      console.log('Video loading results:', results)
     })
   }, [])
 
@@ -76,18 +101,22 @@ export function VideoHeroSection() {
     return () => clearInterval(interval)
   }, [videoSlides.length])
 
-  // Handle video play/pause when slide changes
+  // Enhanced video play/pause handling
   useEffect(() => {
     videoRefs.current.forEach((video, index) => {
       if (video) {
-        if (index === currentSlide && isPlaying) {
-          video.play().catch(console.error)
+        if (index === currentSlide && isPlaying && videosLoaded[index]) {
+          video.play().catch((error) => {
+            console.error(`Failed to play video ${index + 1}:`, error)
+            // Try to reload the video source
+            video.load()
+          })
         } else {
           video.pause()
         }
       }
     })
-  }, [currentSlide, isPlaying])
+  }, [currentSlide, isPlaying, videosLoaded])
 
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev + 1) % videoSlides.length)
@@ -117,12 +146,29 @@ export function VideoHeroSection() {
     visible: {
       y: 0,
       opacity: 1,
-      
     },
   }
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-black">
+      {/* Debug Panel */}
+      {debugMode && (
+        <div className="absolute top-4 left-4 z-30 bg-black/80 text-white p-4 rounded-lg text-xs max-w-md">
+          <h4 className="font-bold mb-2">Debug Info:</h4>
+          <p>Videos Loaded: [{videosLoaded.map(v => v ? '✓' : '✗').join(', ')}]</p>
+          <p>Current Slide: {currentSlide + 1}</p>
+          <p>Is Playing: {isPlaying ? 'Yes' : 'No'}</p>
+          {videoErrors.length > 0 && (
+            <div className="mt-2">
+              <p className="text-red-400">Errors:</p>
+              {videoErrors.map((error, i) => (
+                <p key={i} className="text-red-300 text-xs">{error}</p>
+              ))}
+            </div>
+          )}
+        </div>
+      )}
+
       {/* Video Carousel Background */}
       <div className="absolute inset-0 w-full h-full">
         {videoSlides.map((slide, index) => (
@@ -140,26 +186,43 @@ export function VideoHeroSection() {
                 loop
                 playsInline
                 poster={slide.posterUrl}
+                onError={(e) => {
+                  console.error(`Runtime video error for video ${index + 1}:`, e)
+                }}
+                onLoadedData={() => {
+                  console.log(`Video ${index + 1} ready to play`)
+                }}
               >
-                <source src={slide.videoUrl} type="video/mp4" />
-                <div
-                  className="w-full h-full bg-gray-800 flex items-center justify-center"
-                  style={{
-                    backgroundImage: `url(${slide.posterUrl})`,
-                    backgroundSize: 'cover',
-                    backgroundPosition: 'center'
-                  }}
-                />
+                <source src={slide.videoUrl} type="video/quicktime" />
+                <source src={slide.videoUrl.replace('.mov', '.mp4')} type="video/mp4" />
+                <source src={slide.videoUrl.replace('.mov', '.webm')} type="video/webm" />
               </video>
             ) : (
               <div
-                className="w-full h-full bg-gray-800 flex items-center justify-center"
+                className="w-full h-full bg-gray-800 flex items-center justify-center relative"
                 style={{
                   backgroundImage: `url(${slide.posterUrl})`,
                   backgroundSize: 'cover',
                   backgroundPosition: 'center'
                 }}
-              />
+              >
+                {/* Show loading or error state */}
+                {videosLoaded.length === 0 ? (
+                  <div className="absolute inset-0 flex items-center justify-center bg-black/50">
+                    <div className="text-white text-center">
+                      <div className="w-8 h-8 border-2 border-white border-t-transparent rounded-full animate-spin mx-auto mb-2" />
+                      <p>Loading video...</p>
+                    </div>
+                  </div>
+                ) : (
+                  <div className="absolute inset-0 flex items-center justify-center bg-black/50">
+                    <div className="text-white text-center">
+                      <AlertCircle size={32} className="mx-auto mb-2 text-yellow-400" />
+                      <p>Video unavailable</p>
+                    </div>
+                  </div>
+                )}
+              </div>
             )}
           </div>
         ))}
@@ -168,7 +231,7 @@ export function VideoHeroSection() {
         <div className="absolute inset-0 bg-black/50" />
       </div>
 
-      {/* Main Content */}
+      {/* Rest of your component remains the same... */}
       <div className="relative z-10 w-full max-w-7xl mx-auto px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Column - Main Content */}
@@ -211,15 +274,12 @@ export function VideoHeroSection() {
 
             {/* Action Buttons */}
             <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-4">
-              
               <Link href="/portfolio">
                 <button className="bg-[#1A5319] hover:bg-[#508D4E] text-white px-8 py-4 rounded-lg font-medium transition-colors duration-300">
                 View My Work
               </button>
-
               </Link>
               
-
               <Link href='https://drive.google.com/file/d/1yQZZbTiq2nTIk5DAQOhAvInbE7UI_Aff/view'>
                 <button className="border-2 border-white text-white hover:bg-white hover:text-black px-8 py-4 rounded-lg font-medium transition-all duration-300">
                 Download CV
@@ -321,6 +381,14 @@ export function VideoHeroSection() {
           className="w-10 h-10 bg-black/50 border border-white/20 text-white hover:bg-black/70 rounded-lg flex items-center justify-center transition-all duration-300"
         >
           {isPlaying ? <Pause size={16} /> : <Play size={16} />}
+        </button>
+        
+        {/* Debug Toggle */}
+        <button
+          onClick={() => setDebugMode(!debugMode)}
+          className="w-10 h-10 bg-black/50 border border-white/20 text-white hover:bg-black/70 rounded-lg flex items-center justify-center transition-all duration-300"
+        >
+          🔍
         </button>
       </div>
 
