@@ -503,7 +503,7 @@ export function PortfolioSection() {
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-[#1A5319]/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                       <div className="absolute bottom-4 left-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <div className="flex space-x-3">
+                        {/* <div className="flex space-x-3">
                           <Button size="sm" className="bg-white text-[#1A5319] hover:bg-gray-100">
                             <ExternalLink size={16} className="mr-2" />
                             Live Demo
@@ -516,7 +516,7 @@ export function PortfolioSection() {
                             <Github size={16} className="mr-2" />
                             Code
                           </Button>
-                        </div>
+                        </div> */}
                       </div>
                       {project.featured && (
                         <div className="absolute top-4 right-4">
@@ -549,15 +549,15 @@ export function PortfolioSection() {
                   <div className="grid grid-cols-3 gap-4">
                     <div className="text-center p-3 bg-[#D6EFD8]/50 rounded-lg">
                       <div className="font-bold text-[#1A5319]">{project.metrics.metric1}</div>
-                      <div className="text-xs text-[#508D4E]">Users</div>
+                      
                     </div>
                     <div className="text-center p-3 bg-[#D6EFD8]/50 rounded-lg">
                       <div className="font-bold text-[#1A5319]">{project.metrics.metric2}</div>
-                      <div className="text-xs text-[#508D4E]">Performance</div>
+                      
                     </div>
                     <div className="text-center p-3 bg-[#D6EFD8]/50 rounded-lg">
                       <div className="font-bold text-[#1A5319]">{project.metrics.metric3}</div>
-                      <div className="text-xs text-[#508D4E]">Uptime</div>
+                      
                     </div>
                   </div>
 
