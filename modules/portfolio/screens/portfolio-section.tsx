@@ -394,8 +394,8 @@ export function PortfolioSection() {
 
   const filters = [
     { key: "all", label: "All Projects", count: projects.length },
-    { key: "web", label: "Web Apps", count: projects.filter((p) => p.category === "web").length },
-    { key: "mobile", label: "Mobile Apps", count: projects.filter((p) => p.category === "mobile").length },
+    { key: "web", label: "Web Apps", count: projects.filter((p) => p.category.includes("web")).length },
+    { key: "mobile", label: "Mobile Apps", count: projects.filter((p) => p.category.includes("mobile")).length },
     { key: "featured", label: "Featured", count: projects.filter((p) => p.featured).length },
   ]
 
@@ -404,7 +404,7 @@ export function PortfolioSection() {
       ? projects
       : activeFilter === "featured"
         ? projects.filter((project) => project.featured)
-        : projects.filter((project) => project.category === activeFilter)
+        : projects.filter((project) => project.category.includes(activeFilter))
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -445,8 +445,8 @@ export function PortfolioSection() {
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
               {[
                 { label: "Projects Completed", value: "50+", icon: TrendingUp },
-                { label: "Happy Clients", value: "30+", icon: Users },
-                { label: "Years Experience", value: "5+", icon: Calendar },
+                { label: "Happy Clients", value: "20+", icon: Users },
+                { label: "Years Experience", value: "3+", icon: Calendar },
                 { label: "Technologies Used", value: "25+", icon: Star },
               ].map((stat, index) => (
                 <Card key={index} className="bg-white/60 backdrop-blur-sm border-[#80AF81] shadow-lg text-center">
