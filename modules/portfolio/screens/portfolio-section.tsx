@@ -575,17 +575,26 @@ export function PortfolioSection() {
 
                   {/* Action Buttons */}
                   <div className="flex space-x-4">
-                    <Button className="bg-[#1A5319] hover:bg-[#508D4E] text-white">
+                    
+
+                    <Link href={project.liveUrl} >
+                        <Button className="bg-[#1A5319] hover:bg-[#508D4E] text-white">
                       <ExternalLink size={16} className="mr-2" />
                       View Live
                     </Button>
-                    <Button
+                    </Link>
+
+
+
+                     <Link href={project.githubUrl} >
+                         <Button
                       variant="outline"
                       className="border-[#1A5319] text-[#1A5319] hover:bg-[#1A5319] hover:text-white bg-transparent"
                     >
                       <Github size={16} className="mr-2" />
                       Source Code
                     </Button>
+                    </Link>
                   </div>
                 </div>
               </motion.div>
