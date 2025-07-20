@@ -20,17 +20,16 @@ export function PortfolioSection() {
       "title": "FlySpotter Pro",
       "description": "An AI-powered mobile app for real-time fly species identification, tracking, and educational discovery.",
       "longDescription": "FlySpotter Pro revolutionizes fly identification using TensorFlow Lite-powered machine learning for instant, accurate results. Built with Flutter and Firebase, it offers offline capability, cross-platform support, user management, discovery tracking with Google Maps integration, and a rich educational guide. Designed for entomologists, researchers, pest control professionals, and nature enthusiasts.",
-      "image": "/flyspotter_pro_cover.svg",
+      "image": "/images/projects/spoter.png",
       "gallery": [
-        "/flyspotter_pro_screen1.svg",
-        "/flyspotter_pro_screen2.svg",
-        "/flyspotter_pro_screen3.svg"
+        "/images/projects/spoter.png",
+        
       ],
       "technologies": ["Flutter", "Firebase", "TensorFlow Lite", "Google Maps API", "GetX", "Dart"],
-      "category": "mobile",
-      "liveUrl": "",
+      "category": ["mobile"],
+      "liveUrl": "https://github.com/KumaloWilson/fly_spotter",
       "githubUrl": "https://github.com/KumaloWilson/fly_spotter",
-      "featured": true,
+      "featured": false,
       "metrics": {
         "metric1": "90% model accuracy on test dataset",
         "metric2": "Offline support enabled",
@@ -47,17 +46,17 @@ export function PortfolioSection() {
       "title": "CUT Portal WhatsApp Bot",
       "description": "A scalable WhatsApp chatbot that provides university students with access to their portal information through WhatsApp.",
       "longDescription": "CUT Portal WhatsApp Bot enables students to navigate their portal features — including profiles, course details, grades, and announcements — via WhatsApp. Built with a clean architecture approach, the system separates concerns into models, services, controllers, and routes. Designed for scalability and real-time support using the WhatsApp Business API.",
-      "image": "/cut_portal_bot_cover.svg",
+      "image": "/images/projects/whatbot.png",
       "gallery": [
         "/cut_portal_bot_screen1.svg",
         "/cut_portal_bot_screen2.svg",
         "/cut_portal_bot_screen3.svg"
       ],
       "technologies": ["Node.js", "WhatsApp Business API", "Express.js"],
-      "category": "backend",
-      "liveUrl": "",
-      "githubUrl": "https://github.com/your-username/cut-portal-whatbot",
-      "featured": false,
+      "category": ["web", "backend"],
+      "liveUrl": "https://github.com/KumaloWilson/cut_portal_whatbot",
+      "githubUrl": "https://github.com/KumaloWilson/cut_portal_whatbot",
+      "featured": true,
       "metrics": {
         "metric1": "Clean architecture with separated concerns",
         "metric2": "Supports menu-based navigation",
@@ -73,17 +72,17 @@ export function PortfolioSection() {
       "title": "Smart Driver Companion",
       "description": "An AI-enhanced Flutter app for intelligent driver behavior monitoring, community alerts, navigation, and service location.",
       "longDescription": "Smart Driver Companion is a comprehensive Flutter application that integrates AI-driven driver behavior monitoring, real-time community road alerts, turn-by-turn navigation, and a service locator for drivers. Featuring GetX for state management and a clean MVC architecture, the app leverages Firebase, Google Maps APIs, and a custom Python-based behavior scoring API to deliver an engaging, safety-focused driving experience.",
-      "image": "/smart_driver_companion_cover.svg",
+      "image": "/images/projects/smart-driver.jpg",
       "gallery": [
         "/smart_driver_companion_screen1.svg",
         "/smart_driver_companion_screen2.svg",
         "/smart_driver_companion_screen3.svg"
       ],
       "technologies": ["Flutter", "Firebase", "Google Maps API", "GetX", "Python Flask", "Dart"],
-      "category": "mobile",
-      "liveUrl": "",
-      "githubUrl": "https://github.com/kumalowilson/smart-driver-companion",
-      "featured": true,
+      "category": ["mobile", "web", "fullstack"],
+      "liveUrl": "https://github.com/kumalowilson/smart_driver_companion",
+      "githubUrl": "https://github.com/kumalowilson/smart_driver_companion",
+      "featured": false,
       "metrics": {
         "metric1": "AI-powered real-time driver behavior scoring",
         "metric2": "Community-driven road alert system",
@@ -99,15 +98,15 @@ export function PortfolioSection() {
       "title": "ZINWA Water Meter System",
       "description": "A prepaid water meter management solution for ZINWA with account management, token purchases, and real-time monitoring.",
       "longDescription": "The ZINWA Water Meter System is a comprehensive platform combining an Express.js backend API with a Flutter mobile app. It empowers customers to manage their water accounts, purchase prepaid tokens, monitor usage, and receive alerts. The backend handles authentication, payments via Paynow, real-time meter reading, analytics, and administrative functions, while the mobile app offers an intuitive user experience with offline support, biometric login, and multi-language support.",
-      "image": "/zinwa_water_meter_system_cover.svg",
+      "image": "/images/projects/zinwa.jpg",
       "gallery": [
         "/zinwa_water_meter_system_screen1.svg",
         "/zinwa_water_meter_system_screen2.svg",
         "/zinwa_water_meter_system_screen3.svg"
       ],
-      "technologies": ["Express.js", "TypeScript", "PostgreSQL", "Redis", "Flutter", "GetX", "Dart", "Docker", "Paynow API"],
-      "category": "fullstack",
-      "liveUrl": "",
+      "technologies": ["Express.js", "TypeScript", "PostgreSQL", "NextJs" , "Javascript",  "Redis","IOT", "Flutter", "GetX", "Dart", "Docker", "Paynow API"],
+      "category": ["fullstack", "web", "mobile", "iot"],
+      "liveUrl": "https://github.com/kumalowilson/zinwa_water_meters",
       "githubUrl": "https://github.com/kumalowilson/zinwa_water_meters",
       "featured": true,
       "metrics": {
@@ -122,18 +121,18 @@ export function PortfolioSection() {
     },
     {
       "id": 5,
-      "title": "LearnSmart AI-Powered Learning Platform",
+      "title": "LearnSmart AI-Powered e-Learning Platform",
       "description": "An AI-powered smart learning system for Chinhoyi Technology students with admin, lecturer, and backend modules.",
       "longDescription": "LearnSmart is a full-stack monorepo education platform with AI-powered features for personalized learning and management. The system features separate Next.js frontends for administrators and lecturers, powered by Redux, Radix UI, Tailwind, and more. The backend is built with Node.js, Express, and Sequelize ORM, featuring robust security, OpenAI integration, JWT-based authentication, Supabase for storage, and Paynow for payment processing. Designed for scalability, the platform supports role-based access, learning management, AI integration for enhanced learning experiences, and a modern, maintainable UI/UX.",
-      "image": "/learnsmart_cover.svg",
+      "image": "/images/projects/smart-learn.jpg",
       "gallery": [
         "/learnsmart_admin_dashboard.svg",
         "/learnsmart_lecturer_portal.svg",
         "/learnsmart_backend_api_doc.svg"
       ],
       "technologies": ["Next.js", "React", "Redux Toolkit", "Radix UI", "Tailwind CSS", "Node.js", "Express.js", "TypeScript", "Sequelize", "PostgreSQL", "OpenAI API", "Supabase", "Swagger"],
-      "category": "fullstack",
-      "liveUrl": "",
+      "category": ["fullstack", "web"],
+      "liveUrl": "https://github.com/KumaloWilson/learnsmart",
       "githubUrl": "https://github.com/KumaloWilson/learnsmart",
       "featured": true,
       "metrics": {
@@ -151,16 +150,16 @@ export function PortfolioSection() {
       "title": "Energy Monitor System",
       "description": "A web and mobile platform for real-time monitoring, analysis, and optimization of energy consumption.",
       "longDescription": "Energy Monitor is a multi-platform energy tracking solution aimed at promoting sustainability and efficient energy use. The system includes a Flask-based web application for visualizing energy usage trends and analytics, and a Flutter-based mobile application for monitoring on the go. It provides real-time tracking, historical analysis, device-level monitoring, alerts, and intelligent recommendations. The backend supports secure authentication, RESTful APIs, and integration with smart devices. Built with scalability in mind, Energy Monitor empowers homeowners, facility managers, and organizations to make data-driven decisions on energy consumption.",
-      "image": "/energy_monitor_cover.svg",
+      "image": "/images/projects/energy.jpg",
       "gallery": [
         "/energy_monitor_dashboard.svg",
         "/energy_monitor_device_tracking.svg",
         "/energy_monitor_mobile_app.svg"
       ],
       "technologies": ["Flask", "SQLAlchemy", "Python", "Flutter", "Firebase", "Dart", "Chart.js", "REST API", "JWT Auth"],
-      "category": "fullstack",
-      "liveUrl": "",
-      "githubUrl": "https://github.com/yourusername/energy-monitor",
+      "category": ["fullstack", "mobile"],
+      "liveUrl": "https://github.com/KumaloWilson/flutter_energy",
+      "githubUrl": "https://github.com/KumaloWilson/flutter_energy",
       "featured": false,
       "metrics": {
         "metric1": "Real-time energy usage tracking and analysis",
@@ -178,7 +177,7 @@ export function PortfolioSection() {
   "title": "University Student Portal Web Analytics System",
   "description": "A real-time web analytics platform for monitoring student portal activity using a browser extension, React dashboard, and Express backend with Supabase.",
   "longDescription": "This system provides comprehensive real-time and historical analytics for a university student portal. It tracks active users, clicks, session durations, and navigation flows through a browser extension that streams events via WebSockets. The React dashboard visualizes these insights with charts and heatmaps. The backend, powered by Express and Supabase (PostgreSQL), manages data storage, authentication, and real-time communication. The architecture is optimized for scalability and secure data handling, offering role-based access to administrators and authorized personnel.",
-  "image": "/university_analytics_dashboard.svg",
+  "image": "/images/projects/cutanalytics.jpg",
   "gallery": [
     "/analytics_heatmap.svg",
     "/analytics_realtime_users.svg",
@@ -198,7 +197,7 @@ export function PortfolioSection() {
     "JWT",
     "Manifest V3"
   ],
-  "category": "fullstack",
+  "category": ["web","fullstack"],
   "liveUrl": "",
   "githubUrl": "https://github.com/KumaloWilson/cut_portal_web_analytics",
   "featured": false,
@@ -218,7 +217,7 @@ export function PortfolioSection() {
   "title": "tflite Flutter Plugin",
   "description": "A Flutter plugin providing access to TensorFlow Lite API for image classification, object detection (SSD, YOLO), Pix2Pix, Deeplab, and PoseNet on iOS and Android.",
   "longDescription": "The tflite Flutter plugin allows Flutter apps to perform on-device ML inference using TensorFlow Lite models. It supports a variety of vision tasks such as image classification, object detection using SSD MobileNet and Tiny YOLOv2, image-to-image translation with Pix2Pix, semantic segmentation with Deeplab, and human pose estimation via PoseNet. The plugin is compatible with iOS and Android and includes support for GPU acceleration and real-time camera streams.",
-  "image": "/tflite_flutter_logo.svg",
+  "image": "/images/projects/tflite.jpg",
   "gallery": [
     "/ssd_object_detection_demo.png",
     "/yolo_detection_demo.png",
@@ -233,10 +232,10 @@ export function PortfolioSection() {
     "GPU Delegate",
     "Camera Plugin"
   ],
-  "category": "mobile",
-  "liveUrl": "",
-  "githubUrl": "https://github.com/shaqian/flutter_tflite",
-  "featured": false,
+  "category": ["mobile"],
+  "liveUrl": "https://github.com/KumaloWilson/tflite_v3",
+  "githubUrl": "https://github.com/KumaloWilson/tflite_v3",
+  "featured": true,
   "metrics": {
     "metric1": "Supports multiple TFLite model types: classification, detection, segmentation, pose estimation",
     "metric2": "Runs efficiently on both iOS and Android devices",
@@ -253,7 +252,7 @@ export function PortfolioSection() {
   "title": "GeoFlutterFire3",
   "description": "An advanced Flutter library for performing realtime geoqueries with Firestore, allowing developers to query and listen to documents within a geographic area.",
   "longDescription": "GeoFlutterFire3 is a Flutter library that simplifies storing and querying geospatial data in Firebase Firestore. It enables real-time geolocation querying with automatic updates, making it suitable for location-based apps such as delivery tracking, ride-hailing, and social platforms. The library extends Firestore functionality without altering existing schemas or security rules and provides efficient querying with geohash-based lookups. Inspired by GeoFireX, it offers both reactive streams and single subscriptions with improved memory safety.",
-  "image": "/geoflutterfire_logo.svg",
+  "image": "/images/projects/geo.jpg",
   "gallery": [
     "/geoflutterfire_example_query.png",
     "/geoflutterfire_map_demo.gif"
@@ -266,10 +265,10 @@ export function PortfolioSection() {
     "Stream API",
     "Firestore Realtime Updates"
   ],
-  "category": "mobile",
-  "liveUrl": "",
+  "category": ["mobile"],
+  "liveUrl": "https://github.com/KumaloWilson/GeoFlutterFire3",
   "githubUrl": "https://github.com/KumaloWilson/GeoFlutterFire3",
-  "featured": false,
+  "featured": true,
   "metrics": {
     "metric1": "Supports realtime geo queries with Firestore",
     "metric2": "Memory-safe streaming with single subscription control",
@@ -286,7 +285,7 @@ export function PortfolioSection() {
   "title": "Lucid Eye — AI Assistance App for the Blind",
   "description": "A Flutter-based mobile application designed to assist visually impaired users with object detection, text recognition, navigation, chatbot interaction, and emergency SOS services.",
   "longDescription": "Lucid Eye is an AI-powered mobile assistant aimed at helping visually impaired users interact with their surroundings. Initially built as a university project, the app evolved into a multi-functional tool offering AI-based object detection, text recognition, currency detection, maps navigation, chatbot communication, and an SOS feature. It provides real-time assistance, leveraging machine learning and external APIs to create a meaningful impact for the blind community.",
-  "image": "/lucid_eye_logo.svg",
+  "image": "/images/projects/lucid-eye.jpg",
   "gallery": [
     "/lucid_eye_navigation_demo.png",
     "/lucid_eye_object_detection.png"
@@ -302,8 +301,8 @@ export function PortfolioSection() {
     "WebSockets"
   ],
   "category": "mobile",
-  "liveUrl": "",
-  "githubUrl": "",
+  "liveUrl": "https://github.com/KumaloWilson/lucideye",
+  "githubUrl": "https://github.com/KumaloWilson/lucideye",
   "featured": true,
   "metrics": {
     "metric1": "4 Core Features: Object Detection, Navigation, Chatbot, SOS",
@@ -321,7 +320,7 @@ export function PortfolioSection() {
   "title": "LocalGenAI — Offline AI Assistant",
   "description": "An offline AI assistant app that allows users to download and interact with various language models directly on their devices, with a strong focus on privacy and mobile optimization.",
   "longDescription": "LocalGenAI is a privacy-first AI assistant enabling users to chat with multiple AI language models without requiring an internet connection. Built with Flutter and leveraging mobile-optimized AI models (via ONNX, TensorFlow Lite, Core ML), it offers a fully offline experience. Users can download models, switch between them, and enjoy seamless interaction on both Android and iOS. The app ensures all data remains on-device, making it ideal for users concerned about privacy.",
-  "image": "/localgenai_logo.svg",
+  "image": "/images/projects/genai.jpg",
   "gallery": [
     "/localgenai_dashboard.png",
     "/localgenai_model_selection.png"
@@ -336,9 +335,9 @@ export function PortfolioSection() {
     "Core ML",
     "Model Optimization"
   ],
-  "category": "mobile",
-  "liveUrl": "",
-  "githubUrl": "",
+  "category": ["mobile"],
+  "liveUrl": "https://github.com/KumaloWilson/local_genai",
+  "githubUrl": "https://github.com/KumaloWilson/local_genai",
   "featured": true,
   "metrics": {
     "metric1": "100% Offline AI Interaction",
@@ -352,45 +351,13 @@ export function PortfolioSection() {
 },
 
 
-{
-  "id": 12,
-  "title": "SmallMedLM — Fine-tuned Medical Language Model",
-  "description": "A lightweight language model fine-tuned on disease and symptom datasets for offline inference in healthcare-related applications.",
-  "longDescription": "SmallMedLM is a fine-tuned version of DistilGPT-2 trained on a curated dataset of diseases and symptoms. Designed for lightweight inference on edge devices, it helps map medical terms like diseases to their common symptoms. The training involved tokenizing the dataset, preparing a custom PyTorch DataLoader, and running multi-epoch fine-tuning with validation. The model can generate symptom lists given disease names and is optimized for low-latency offline deployment in healthcare support tools.",
-  "image": "/smallmedlm_banner.png",
-  "gallery": [
-    "/smallmedlm_training_curve.png",
-    "/smallmedlm_sample_output.png"
-  ],
-  "technologies": [
-    "PyTorch",
-    "Transformers (Hugging Face)",
-    "Datasets",
-    "Pandas",
-    "GPT-2 Fine-tuning",
-    "Jupyter Notebook"
-  ],
-  "category": "ai-ml",
-  "liveUrl": "",
-  "githubUrl": "",
-  "featured": false,
-  "metrics": {
-    "metric1": "10 training epochs with real-time validation tracking",
-    "metric2": "DistilGPT-2 fine-tuned on 400 disease-symptom pairs",
-    "metric3": "Offline symptom prediction with autoregressive generation",
-    "metric4": "Deployment-ready PyTorch model for edge devices"
-  },
-  "timeline": "Prototype trained in July 2025",
-  "client": "Internal Research / Experimental",
-  "year": "2025"
-},
 
 {
   "id": 13,
   "title": "St Joseph's Mission Hospital Website",
   "description": "A responsive informational website for St Joseph's Mission Hospital built with React, TypeScript, and TailwindCSS.",
   "longDescription": "A clean, fast, and mobile-friendly website designed for St Joseph's Mission Hospital. Built using React with TypeScript and powered by Vite for optimal development and build speed. The site provides essential information about hospital services, departments, contact details, and general health awareness content.",
-  "image": "/stjosephs_banner.png",
+  "image": "/images/projects/stjosephs.png",
   "gallery": [
     "/stjosephs_homepage.png",
     "/stjosephs_about.png",
@@ -405,9 +372,9 @@ export function PortfolioSection() {
     "React Spring",
     "React Icons"
   ],
-  "category": "web",
-  "liveUrl": "",
-  "githubUrl": "",
+  "category": ["web"],
+  "liveUrl": "https://github.com/KumaloWilson/stjosephswebsite",
+  "githubUrl": "https://github.com/KumaloWilson/stjosephswebsite",
   "featured": false,
   "metrics": {
     "metric1": "Single-page application with smooth navigation",
