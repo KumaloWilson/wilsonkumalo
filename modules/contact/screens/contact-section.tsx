@@ -19,6 +19,7 @@ import {
   Twitter,
 } from "lucide-react"
 import Image from "next/image"
+import Link from "next/link"
 
 export function ContactSection() {
   // Load TidyCal script
@@ -37,24 +38,24 @@ export function ContactSection() {
     {
       icon: Mail,
       label: "Email",
-      value: "john.doe@example.com",
-      href: "mailto:john.doe@example.com",
+      value: "kumalowilson900@gmail.com",
+      href: "mailto:kumalowilson900@gmail.com",
       description: "Best for detailed project discussions",
       responseTime: "Within 4 hours",
     },
     {
       icon: Phone,
       label: "Phone",
-      value: "+1 (555) 123-4567",
-      href: "tel:+15551234567",
+      value: "+263 77 191 0924",
+      href: "tel:+263771910924",
       description: "For urgent inquiries and consultations",
-      responseTime: "Available 9 AM - 6 PM PST",
+      responseTime: "Available 9 AM - 6 PM GMT",
     },
     {
       icon: MessageCircle,
       label: "WhatsApp",
-      value: "+1 (555) 123-4567",
-      href: "https://wa.me/15551234567",
+      value: "+263 77 191 0924",
+      href: "https://wa.me/263771910924",
       description: "Quick questions and updates",
       responseTime: "Usually within 1 hour",
     },
@@ -64,29 +65,29 @@ export function ContactSection() {
     {
       name: "LinkedIn",
       icon: Linkedin,
-      href: "https://linkedin.com/in/johndoe",
+      href: "https://www.linkedin.com/in/wilson-kumalo-733550243/",
       color: "bg-blue-600",
-      followers: "5K+",
+      followers: "1K+",
     },
     {
       name: "GitHub",
       icon: Github,
-      href: "https://github.com/johndoe",
+      href: "https://github.com/KumaloWilson",
       color: "bg-gray-800",
-      followers: "2K+",
+      followers: "20+",
     },
     {
       name: "Twitter",
       icon: Twitter,
-      href: "https://twitter.com/johndoe",
+      href: "https://twitter.com/KumaloWilson",
       color: "bg-blue-400",
-      followers: "3K+",
+      followers: "10+",
     },
   ]
 
   const availability = [
-    { day: "Monday - Friday", hours: "9:00 AM - 6:00 PM PST", available: true },
-    { day: "Saturday", hours: "10:00 AM - 2:00 PM PST", available: true },
+    { day: "Monday - Friday", hours: "9:00 AM - 6:00 PM GMTT", available: true },
+    { day: "Saturday", hours: "Closed", available: false },
     { day: "Sunday", hours: "Closed", available: false },
   ]
 
@@ -148,29 +149,29 @@ export function ContactSection() {
             </div>
           </motion.div>
 
-          <div className="grid lg:grid-cols-2 gap-12 mb-16">
-            {/* TidyCal Booking Widget */}
-            <motion.div variants={itemVariants}>
-              <Card className="bg-white/80 backdrop-blur-sm border-[#80AF81] shadow-xl">
-                <CardContent className="p-8">
-                  <h2 className="text-2xl font-bold text-[#1A5319] mb-6 flex items-center">
-                    <Calendar className="mr-3" />
-                    Schedule a Consultation
-                  </h2>
-                  <p className="text-[#508D4E] mb-6">
-                    Book a free consultation call to discuss your project requirements, timeline, and how we can work together.
-                  </p>
-                  <div 
-                    className="tidycal-embed" 
-                    data-path="kumalowilson900"
-                    style={{ minHeight: '500px' }}
-                  ></div>
-                </CardContent>
-              </Card>
-            </motion.div>
+          {/* TidyCal Booking Widget - Full Width */}
+          <motion.div variants={itemVariants} className="mb-16">
+            <Card className="bg-white/80 backdrop-blur-sm border-[#80AF81] shadow-xl">
+              <CardContent className="p-8">
+                <h2 className="text-3xl font-bold text-[#1A5319] mb-6 text-center flex items-center justify-center">
+                  <Calendar className="mr-3" />
+                  Schedule a Consultation
+                </h2>
+                <p className="text-xl text-[#508D4E] mb-8 text-center max-w-4xl mx-auto">
+                  Book a free consultation call to discuss your project requirements, timeline, and how we can work together.
+                </p>
+                <div 
+                  className="tidycal-embed" 
+                  data-path="kumalowilson900"
+                  style={{ minHeight: '700px' }}
+                ></div>
+              </CardContent>
+            </Card>
+          </motion.div>
 
-            {/* Contact Information & Availability */}
-            <motion.div variants={itemVariants} className="space-y-8">
+          {/* Contact Information Grid - Below TidyCal */}
+          <motion.div variants={itemVariants} className="mb-16">
+            <div className="grid lg:grid-cols-3 gap-8">
               {/* Personal Info */}
               <Card className="bg-white/80 backdrop-blur-sm border-[#80AF81] shadow-xl">
                 <CardContent className="p-8">
@@ -185,11 +186,11 @@ export function ContactSection() {
                       />
                     </div>
                     <div>
-                      <h3 className="text-xl font-bold text-[#1A5319]">John Doe</h3>
-                      <p className="text-[#508D4E]">Full Stack Developer</p>
+                      <h3 className="text-xl font-bold text-[#1A5319]">Wilson Kumalo</h3>
+                      <p className="text-[#508D4E]">Full Stack Web and Mobile Developer</p>
                       <div className="flex items-center space-x-2 mt-1">
                         <MapPin size={14} className="text-[#508D4E]" />
-                        <span className="text-sm text-[#508D4E]">San Francisco, CA</span>
+                        <span className="text-sm text-[#508D4E]">Bulawayo, ZW</span>
                       </div>
                     </div>
                   </div>
@@ -267,8 +268,8 @@ export function ContactSection() {
                   </div>
                 </CardContent>
               </Card>
-            </motion.div>
-          </div>
+            </div>
+          </motion.div>
 
           {/* Why Work With Me */}
           <motion.div variants={itemVariants} className="mb-16">
@@ -285,7 +286,7 @@ export function ContactSection() {
                   title: "Technical Expertise",
                   description: "Deep knowledge across the full development stack",
                   icon: "⚡",
-                  stats: "5+ Years Experience",
+                  stats: "3+ Years Experience",
                 },
                 {
                   title: "Clear Communication",
@@ -379,18 +380,15 @@ export function ContactSection() {
                   you through every step of the development process.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-6 justify-center">
-                  <Button size="lg" variant="secondary" className="bg-white text-[#1A5319] hover:bg-gray-100 px-8 py-4">
+                  <Link href={"https://tidycal.com/kumalowilson900"}>
+                    <Button size="lg" variant="secondary" className="bg-white text-[#1A5319] hover:bg-gray-100 px-8 py-4">
                     <Calendar className="mr-2" />
                     Schedule a Call
                   </Button>
-                  <Button
-                    size="lg"
-                    variant="outline"
-                    className="border-white text-white hover:bg-white hover:text-[#1A5319] px-8 py-4 bg-transparent"
-                  >
-                    <MessageCircle className="mr-2" />
-                    Send Quick Message
-                  </Button>
+
+                  </Link>
+                  
+                
                 </div>
               </CardContent>
             </Card>
