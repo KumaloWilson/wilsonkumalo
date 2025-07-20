@@ -151,9 +151,9 @@ export function VideoHeroSection() {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-black">
-      {/* Debug Panel */}
+      {/* Debug Panel - Hidden on mobile for cleaner view */}
       {debugMode && (
-        <div className="absolute top-4 left-4 z-30 bg-black/80 text-white p-4 rounded-lg text-xs max-w-md">
+        <div className="absolute top-4 left-4 z-30 bg-black/80 text-white p-3 rounded-lg text-xs max-w-xs sm:max-w-md hidden sm:block">
           <h4 className="font-bold mb-2">Debug Info:</h4>
           <p>Videos Loaded: [{videosLoaded.map(v => v ? '✓' : '✗').join(', ')}]</p>
           <p>Current Slide: {currentSlide + 1}</p>
@@ -211,14 +211,14 @@ export function VideoHeroSection() {
                   <div className="absolute inset-0 flex items-center justify-center bg-black/50">
                     <div className="text-white text-center">
                       <div className="w-8 h-8 border-2 border-white border-t-transparent rounded-full animate-spin mx-auto mb-2" />
-                      <p>Loading video...</p>
+                      <p className="text-sm">Loading video...</p>
                     </div>
                   </div>
                 ) : (
                   <div className="absolute inset-0 flex items-center justify-center bg-black/50">
                     <div className="text-white text-center">
-                      <AlertCircle size={32} className="mx-auto mb-2 text-yellow-400" />
-                      <p>Video unavailable</p>
+                      <AlertCircle size={24} className="mx-auto mb-2 text-yellow-400" />
+                      <p className="text-sm">Video unavailable</p>
                     </div>
                   </div>
                 )}
@@ -231,9 +231,140 @@ export function VideoHeroSection() {
         <div className="absolute inset-0 bg-black/50" />
       </div>
 
-      {/* Rest of your component remains the same... */}
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Mobile Layout */}
+        <div className="lg:hidden">
+          <motion.div 
+            variants={containerVariants} 
+            initial="hidden" 
+            animate="visible" 
+            className="text-white text-center space-y-6 pt-8"
+          >
+            {/* Profile Image - Smaller on mobile */}
+            <motion.div variants={itemVariants}>
+              <div className="w-32 h-32 bg-[#508D4E] rounded-xl mx-auto overflow-hidden border-2 border-white/20">
+                <div
+                  className="w-full h-full bg-gray-600 flex items-center justify-center"
+                  style={{
+                    backgroundImage: 'url(https://avatars.githubusercontent.com/u/121590986?v=4)',
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center'
+                  }}
+                >
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Category Badge */}
+            <motion.div variants={itemVariants}>
+              <span className="inline-block bg-[#80AF81] text-white text-xs font-medium px-3 py-1.5 rounded-full">
+                {videoSlides[currentSlide].category}
+              </span>
+            </motion.div>
+
+            {/* Main Heading */}
+            <motion.div variants={itemVariants}>
+              <h1 className="text-3xl sm:text-4xl font-bold leading-tight">
+                Wilson Kumalo
+              </h1>
+              <div className="w-16 h-1 bg-[#508D4E] mx-auto mt-3"></div>
+            </motion.div>
+
+            {/* Dynamic Content */}
+            <motion.div
+              key={currentSlide}
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              className="space-y-3 px-4"
+            >
+              <h2 className="text-xl sm:text-2xl font-semibold text-[#D6EFD8]">
+                {videoSlides[currentSlide].title}
+              </h2>
+              <p className="text-sm sm:text-base text-gray-300 leading-relaxed max-w-sm mx-auto">
+                {videoSlides[currentSlide].description}
+              </p>
+            </motion.div>
+
+            {/* Action Buttons - Stack vertically on mobile */}
+            <motion.div variants={itemVariants} className="flex flex-col gap-3 px-8">
+              <Link href="/portfolio">
+                <button className="w-full bg-[#1A5319] hover:bg-[#508D4E] text-white px-6 py-3 rounded-lg font-medium transition-colors duration-300 text-sm">
+                  View My Work
+                </button>
+              </Link>
+              
+              <Link href='https://drive.google.com/file/d/1yQZZbTiq2nTIk5DAQOhAvInbE7UI_Aff/view'>
+                <button className="w-full border-2 border-white text-white hover:bg-white hover:text-black px-6 py-3 rounded-lg font-medium transition-all duration-300 text-sm">
+                  Download CV
+                </button>
+              </Link>
+            </motion.div>
+
+            {/* Social Links - Smaller and better spaced */}
+            <motion.div variants={itemVariants} className="flex justify-center space-x-3">
+              {[
+                { icon: Github, href: "https://github.com/kumalowilson", label: "GitHub" },
+                { icon: Linkedin, href: "https://www.linkedin.com/in/wilson-kumalo-733550243/", label: "LinkedIn" },
+                { icon: Mail, href: "/contact", label: "Contact" },
+              ].map((social, index) => (
+                <motion.a
+                  key={index}
+                  href={social.href}
+                  aria-label={social.label}
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="w-10 h-10 bg-white/10 border border-white/20 rounded-lg flex items-center justify-center text-white hover:bg-[#508D4E] hover:border-[#508D4E] transition-all duration-300"
+                >
+                  <social.icon size={18} />
+                </motion.a>
+              ))}
+            </motion.div>
+
+            {/* Slide Navigation - Compact mobile version */}
+            <motion.div variants={itemVariants} className="flex flex-col items-center space-y-4 pb-8">
+              {/* Slide Counter */}
+              <div className="text-white/80 text-xs font-medium">
+                {String(currentSlide + 1).padStart(2, '0')} / {String(videoSlides.length).padStart(2, '0')}
+              </div>
+
+              {/* Navigation Arrows - Smaller on mobile */}
+              <div className="flex space-x-3">
+                <button
+                  onClick={prevSlide}
+                  aria-label="Previous slide"
+                  className="w-10 h-10 border-2 border-white/30 text-white hover:border-white hover:bg-white/10 rounded-lg flex items-center justify-center transition-all duration-300"
+                >
+                  <ChevronLeft size={18} />
+                </button>
+                <button
+                  onClick={nextSlide}
+                  aria-label="Next slide"
+                  className="w-10 h-10 border-2 border-white/30 text-white hover:border-white hover:bg-white/10 rounded-lg flex items-center justify-center transition-all duration-300"
+                >
+                  <ChevronRight size={18} />
+                </button>
+              </div>
+
+              {/* Slide Indicators */}
+              <div className="flex space-x-2">
+                {videoSlides.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setCurrentSlide(index)}
+                    aria-label={`Go to slide ${index + 1}`}
+                    className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${
+                      index === currentSlide ? "bg-white" : "bg-white/30 hover:bg-white/50"
+                    }`}
+                  />
+                ))}
+              </div>
+            </motion.div>
+          </motion.div>
+        </div>
+
+        {/* Desktop Layout - Unchanged */}
+        <div className="hidden lg:grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Column - Main Content */}
           <motion.div 
             variants={containerVariants} 
@@ -373,31 +504,31 @@ export function VideoHeroSection() {
         </div>
       </div>
 
-      {/* Video Controls */}
-      <div className="absolute bottom-8 left-8 z-20 flex items-center space-x-4">
+      {/* Video Controls - Better positioned for mobile */}
+      <div className="absolute bottom-4 left-4 z-20 flex items-center space-x-3">
         <button
           onClick={togglePlayPause}
           aria-label={isPlaying ? "Pause video" : "Play video"}
-          className="w-10 h-10 bg-black/50 border border-white/20 text-white hover:bg-black/70 rounded-lg flex items-center justify-center transition-all duration-300"
+          className="w-9 h-9 bg-black/50 border border-white/20 text-white hover:bg-black/70 rounded-lg flex items-center justify-center transition-all duration-300"
         >
-          {isPlaying ? <Pause size={16} /> : <Play size={16} />}
+          {isPlaying ? <Pause size={14} /> : <Play size={14} />}
         </button>
         
-        {/* Debug Toggle */}
+        {/* Debug Toggle - Hidden on mobile for cleaner view */}
         <button
           onClick={() => setDebugMode(!debugMode)}
-          className="w-10 h-10 bg-black/50 border border-white/20 text-white hover:bg-black/70 rounded-lg flex items-center justify-center transition-all duration-300"
+          className="hidden sm:flex w-9 h-9 bg-black/50 border border-white/20 text-white hover:bg-black/70 rounded-lg items-center justify-center transition-all duration-300 text-xs"
         >
           🔍
         </button>
       </div>
 
-      {/* Scroll Indicator */}
+      {/* Scroll Indicator - Hidden on mobile to reduce clutter */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.5 }}
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20"
+        className="absolute bottom-4 left-1/2 transform -translate-x-1/2 z-20 hidden sm:block"
       >
         <motion.div
           animate={{ y: [0, 8, 0] }}
@@ -409,12 +540,12 @@ export function VideoHeroSection() {
         </motion.div>
       </motion.div>
 
-      {/* Loading Indicator */}
+      {/* Loading Indicator - Smaller and better positioned for mobile */}
       {videosLoaded.length === 0 && (
-        <div className="absolute top-8 right-8 z-20">
-          <div className="flex items-center space-x-3 text-white bg-black/50 px-4 py-3 rounded-lg border border-white/20">
-            <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
-            <span className="text-sm">Loading videos...</span>
+        <div className="absolute top-4 right-4 z-20">
+          <div className="flex items-center space-x-2 sm:space-x-3 text-white bg-black/50 px-3 py-2 sm:px-4 sm:py-3 rounded-lg border border-white/20">
+            <div className="w-4 h-4 sm:w-5 sm:h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
+            <span className="text-xs sm:text-sm">Loading...</span>
           </div>
         </div>
       )}
