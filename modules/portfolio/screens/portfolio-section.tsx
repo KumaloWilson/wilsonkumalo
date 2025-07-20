@@ -601,6 +601,10 @@ export function PortfolioSection() {
             ))}
           </motion.div>
 
+
+
+
+
           {/* Development Process */}
           <motion.div variants={itemVariants} className="mt-20 mb-20">
             <h2 className="text-3xl font-bold text-[#1A5319] text-center mb-12">My Development Process</h2>

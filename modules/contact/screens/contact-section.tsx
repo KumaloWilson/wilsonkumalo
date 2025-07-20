@@ -2,21 +2,17 @@
 
 import type React from "react"
 import { motion } from "framer-motion"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
 import { Badge } from "@/components/ui/badge"
 import {
   Mail,
   Phone,
   MapPin,
-  Send,
+  Calendar,
   MessageCircle,
   Clock,
-  CheckCircle,
-  Calendar,
   Globe,
   Linkedin,
   Github,
@@ -25,51 +21,17 @@ import {
 import Image from "next/image"
 
 export function ContactSection() {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    company: "",
-    budget: "",
-    timeline: "",
-    projectType: "",
-    message: "",
-  })
+  // Load TidyCal script
+  useEffect(() => {
+    const script = document.createElement('script')
+    script.src = 'https://asset-tidycal.b-cdn.net/js/embed.js'
+    script.async = true
+    document.body.appendChild(script)
 
-  const [isSubmitting, setIsSubmitting] = useState(false)
-  const [submitted, setSubmitted] = useState(false)
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    setIsSubmitting(true)
-
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 2000))
-
-    console.log("Form submitted:", formData)
-    setIsSubmitting(false)
-    setSubmitted(true)
-
-    // Reset form after 3 seconds
-    setTimeout(() => {
-      setSubmitted(false)
-      setFormData({
-        name: "",
-        email: "",
-        company: "",
-        budget: "",
-        timeline: "",
-        projectType: "",
-        message: "",
-      })
-    }, 3000)
-  }
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    })
-  }
+    return () => {
+      document.body.removeChild(script)
+    }
+  }, [])
 
   const contactMethods = [
     {
@@ -187,138 +149,22 @@ export function ContactSection() {
           </motion.div>
 
           <div className="grid lg:grid-cols-2 gap-12 mb-16">
-            {/* Contact Form */}
+            {/* TidyCal Booking Widget */}
             <motion.div variants={itemVariants}>
               <Card className="bg-white/80 backdrop-blur-sm border-[#80AF81] shadow-xl">
                 <CardContent className="p-8">
                   <h2 className="text-2xl font-bold text-[#1A5319] mb-6 flex items-center">
-                    <Send className="mr-3" />
-                    Project Inquiry
+                    <Calendar className="mr-3" />
+                    Schedule a Consultation
                   </h2>
-
-                  {submitted ? (
-                    <motion.div
-                      initial={{ opacity: 0, scale: 0.8 }}
-                      animate={{ opacity: 1, scale: 1 }}
-                      className="text-center py-8"
-                    >
-                      <CheckCircle size={64} className="mx-auto text-green-500 mb-4" />
-                      <h3 className="text-xl font-bold text-[#1A5319] mb-2">Message Sent!</h3>
-                      <p className="text-[#508D4E]">
-                        Thank you for reaching out. I'll get back to you within 24 hours.
-                      </p>
-                    </motion.div>
-                  ) : (
-                    <form onSubmit={handleSubmit} className="space-y-6">
-                      <div className="grid md:grid-cols-2 gap-4">
-                        <Input
-                          type="text"
-                          name="name"
-                          placeholder="Your Name *"
-                          value={formData.name}
-                          onChange={handleChange}
-                          className="border-[#80AF81] focus:border-[#508D4E] focus:ring-[#508D4E]"
-                          required
-                        />
-                        <Input
-                          type="email"
-                          name="email"
-                          placeholder="Your Email *"
-                          value={formData.email}
-                          onChange={handleChange}
-                          className="border-[#80AF81] focus:border-[#508D4E] focus:ring-[#508D4E]"
-                          required
-                        />
-                      </div>
-
-                      <div className="grid md:grid-cols-2 gap-4">
-                        <Input
-                          type="text"
-                          name="company"
-                          placeholder="Company/Organization"
-                          value={formData.company}
-                          onChange={handleChange}
-                          className="border-[#80AF81] focus:border-[#508D4E] focus:ring-[#508D4E]"
-                        />
-                        <select
-                          name="projectType"
-                          value={formData.projectType}
-                          onChange={handleChange}
-                          className="border border-[#80AF81] rounded-md px-3 py-2 focus:border-[#508D4E] focus:ring-[#508D4E] focus:outline-none"
-                          required
-                        >
-                          <option value="">Project Type *</option>
-                          <option value="web-app">Web Application</option>
-                          <option value="mobile-app">Mobile Application</option>
-                          <option value="ecommerce">E-commerce Platform</option>
-                          <option value="api">API Development</option>
-                          <option value="consulting">Consulting</option>
-                          <option value="other">Other</option>
-                        </select>
-                      </div>
-
-                      <div className="grid md:grid-cols-2 gap-4">
-                        <select
-                          name="budget"
-                          value={formData.budget}
-                          onChange={handleChange}
-                          className="border border-[#80AF81] rounded-md px-3 py-2 focus:border-[#508D4E] focus:ring-[#508D4E] focus:outline-none"
-                        >
-                          <option value="">Budget Range</option>
-                          <option value="5k-10k">$5K - $10K</option>
-                          <option value="10k-25k">$10K - $25K</option>
-                          <option value="25k-50k">$25K - $50K</option>
-                          <option value="50k+">$50K+</option>
-                        </select>
-                        <select
-                          name="timeline"
-                          value={formData.timeline}
-                          onChange={handleChange}
-                          className="border border-[#80AF81] rounded-md px-3 py-2 focus:border-[#508D4E] focus:ring-[#508D4E] focus:outline-none"
-                        >
-                          <option value="">Timeline</option>
-                          <option value="asap">ASAP</option>
-                          <option value="1-2months">1-2 Months</option>
-                          <option value="3-6months">3-6 Months</option>
-                          <option value="6months+">6+ Months</option>
-                        </select>
-                      </div>
-
-                      <Textarea
-                        name="message"
-                        placeholder="Tell me about your project... *"
-                        value={formData.message}
-                        onChange={handleChange}
-                        rows={6}
-                        className="border-[#80AF81] focus:border-[#508D4E] focus:ring-[#508D4E] resize-none"
-                        required
-                      />
-
-                      <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
-                        <Button
-                          type="submit"
-                          disabled={isSubmitting}
-                          className="w-full bg-[#1A5319] hover:bg-[#508D4E] text-white py-3 rounded-full transition-all duration-300 disabled:opacity-50"
-                        >
-                          {isSubmitting ? (
-                            <>
-                              <motion.div
-                                animate={{ rotate: 360 }}
-                                transition={{ duration: 1, repeat: Number.POSITIVE_INFINITY, ease: "linear" }}
-                                className="w-5 h-5 border-2 border-white border-t-transparent rounded-full mr-2"
-                              />
-                              Sending Message...
-                            </>
-                          ) : (
-                            <>
-                              <Send size={20} className="mr-2" />
-                              Send Project Inquiry
-                            </>
-                          )}
-                        </Button>
-                      </motion.div>
-                    </form>
-                  )}
+                  <p className="text-[#508D4E] mb-6">
+                    Book a free consultation call to discuss your project requirements, timeline, and how we can work together.
+                  </p>
+                  <div 
+                    className="tidycal-embed" 
+                    data-path="kumalowilson900"
+                    style={{ minHeight: '500px' }}
+                  ></div>
                 </CardContent>
               </Card>
             </motion.div>
