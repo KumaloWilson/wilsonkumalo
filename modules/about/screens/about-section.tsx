@@ -37,30 +37,55 @@ export function AboutSection() {
     { icon: Users, title: "Team Lead Experience", year: "2023" },
     { icon: Heart, title: "Open Source Contributor", year: "2023" },
   ]
-const timeline = [
+
+  const timeline = [
   {
-    year: "2025",
+    year: "Oct 2025 - Present",
+    title: "Full Stack Software Developer",
+    company: "Appsistance",
+    description:
+      "Building a complete Point-of-Sale (POS) system, including inventory management, product catalogs, receipt generation, offline-first capabilities, and real-time syncing. Responsible for backend API design, database architecture, and frontend/mobile development. Led integrations for payments, authentication, and business reporting while ensuring scalability and smooth user workflows.",
+  },
+
+  {
+    year: "Oct 2025 - Present",
+    title: "CTO & Lead Developer",
+    company: "Juvakel Team Recruiters",
+    description:
+      "Leading the technical direction of a multi-portal recruitment ecosystem (Admin, Recruiter, Candidate). Architected the platform’s infrastructure, built secure APIs, developed mobile and web applications, and implemented features such as candidate screening, job posting workflows, notifications, and analytics dashboards. Introduced automation and DevOps practices to streamline operations and improve reliability.",
+  },
+
+  {
+    year: "Sept 2025 - Present",
+    title: "Full Stack Developer",
+    company: "BRTI (Neotree Project)",
+    description:
+      "Contributing to the Neotree digital health platform—an evidence-based neonatal EHR and clinical decision-support system. Working on the full stack including web, mobile, and backend services. Implemented new features across modules, built changelog/version-control systems, improved data syncing flows, optimized UI/UX, and collaborated closely with clinicians and global research teams to enhance the platform’s impact in frontline hospitals.",
+  },
+
+  {
+    year: "April 2025 - Aug 2025",
     title: "Full Stack Developer",
     company: "Kays Consulting Services",
     description:
       "Working on cross-platform web and mobile solutions across multiple domains. Responsible for building scalable backends, modern UIs, and integrating third-party APIs. Led the development of core business platforms and introduced automation for internal workflows.",
   },
   {
-    year: "2024",
+    year: "Nov 2024 - May 2025",
     title: "Lead Software Engineer",
     company: "Abstrak Agency",
     description:
       "Spearheaded full-stack development initiatives across multiple client projects. Mentored junior developers, enforced code quality standards, and introduced scalable architecture patterns using modern frameworks like Next.js and Flutter.",
   },
   {
-    year: "2023",
+    year: "Dec 2023 - Dec 2024",
     title: "Lead Mobile App Developer",
     company: "KaribuTech AI",
     description:
       "Led the design and development of AI-powered mobile applications using Flutter. Integrated real-time databases, authentication, and push notifications while delivering intuitive user experiences. Focused on performance optimization and rapid prototyping.",
   },
   {
-    year: "2022",
+    year: "Aug 2022 - Present",
     title: "Software Developer",
     company: "Kingsman Software Services",
     description:
@@ -312,8 +337,8 @@ const timeline = [
             <h2 className="text-3xl font-bold text-[#1A5319] text-center mb-12">Fun Facts About Me</h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
               {[
-                { fact: "I've written over 150,000 lines of code", emoji: "💻" },
-                { fact: "I speak 3 programming languages fluently", emoji: "🗣️" },
+                { fact: "I've written over 500,000 lines of code", emoji: "💻" },
+                { fact: "I speak 5 programming languages fluently", emoji: "🗣️" },
                 { fact: "I've mentored 25+ junior developers", emoji: "👨‍🏫" },
                 { fact: "I contribute to 10+ open source projects", emoji: "🌟" },
               ].map((item, index) => (
